@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/main_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/git_text"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/git_logo_iv"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/git_image_description"
+            android:src="@drawable/git_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_title_tv" />
+
+        <TextView
+            android:id="@+id/name_title_tv"
+            style="@style/title_style"
+            android:text="@string/type"
+            app:layout_constraintStart_toEndOf="@+id/type_icon"
+            app:layout_constraintTop_toBottomOf="@+id/git_logo_iv" />
+
+        <TextView
+            android:id="@+id/name_value_tv"
+            style="@style/text_style"
+            android:text="@string/type_value"
+            app:layout_constraintStart_toEndOf="@+id/description_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/git_logo_iv" />
+
+        <TextView
+            android:id="@+id/description_title_tv"
+            style="@style/title_style"
+            android:text="@string/description"
+            app:layout_constraintStart_toEndOf="@+id/description_icon"
+            app:layout_constraintTop_toBottomOf="@+id/name_title_tv" />
+
+        <TextView
+            android:id="@+id/description_value_tv"
+            style="@style/long_text_style"
+            android:layout_marginEnd="16dp"
+            android:text="@string/description_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/description_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/name_value_tv" />
+
+        <TextView
+            android:id="@+id/founder_title_tv"
+            style="@style/title_style"
+            android:text="@string/founder"
+            app:layout_constraintStart_toEndOf="@+id/founder_icon"
+            app:layout_constraintTop_toBottomOf="@+id/description_value_tv" />
+
+        <TextView
+            android:id="@+id/founder_value_tv"
+            style="@style/text_style"
+            android:text="@string/founder_name"
+            app:layout_constraintStart_toEndOf="@+id/description_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/description_value_tv" />
+
+        <TextView
+            android:id="@+id/website_title_tv"
+            style="@style/title_style"
+            android:text="@string/website"
+            app:layout_constraintStart_toEndOf="@+id/website_icon"
+            app:layout_constraintTop_toBottomOf="@+id/founder_title_tv" />
+
+        <TextView
+            android:id="@+id/website_value_tv"
+            style="@style/text_style"
+            android:text="@string/website_link"
+            app:layout_constraintStart_toEndOf="@+id/description_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/founder_value_tv" />
+
+        <ImageView
+            android:id="@+id/website_icon"
+            style="@style/icon_images_style"
+            android:contentDescription="@string/icon_image"
+            android:src="@drawable/ic_world"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/founder_title_tv" />
+
+        <ImageView
+            android:id="@+id/founder_icon"
+            style="@style/icon_images_style"
+            android:contentDescription="@string/icon_image"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_value_tv" />
+
+        <ImageView
+            android:id="@+id/description_icon"
+            style="@style/icon_images_style"
+            android:contentDescription="@string/icon_image"
+            android:src="@drawable/ic_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_value_tv" />
+
+        <ImageView
+            android:id="@+id/type_icon"
+            style="@style/icon_images_style"
+            android:contentDescription="@string/icon_image"
+            android:src="@drawable/ic_merge_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/git_logo_iv" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

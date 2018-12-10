@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Git Information</string>
+    <string name="git_image_description">The logo image of git.</string>
+    <string name="website">Website:</string>
+    <string name="founder">Founder:</string>
+    <string name="description">Description:</string>
+    <string name="description_detail">Git is a free and open source distributed version control.</string>
+    <string name="website_link">https://git-scm.com/</string>
+    <string name="founder_name">Linus Torvalds</string>
+    <string name="type">Type:</string>
+    <string name="type_value">Version control</string>
+    <string name="git_text">Git</string>
+    <string name="git_logo_image_with_text">Git Logo Image with Text.</string>
+    <string name="icon_image">Icon Description</string>
+</resources>
