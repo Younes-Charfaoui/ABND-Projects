@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Score Keeper</string>
+    <string name="fouls_icon_desc">Fouls Icon</string>
+    <string name="corner_icon_desc">Corner Icon</string>
+    <string name="zero_string">0</string>
+    <string name="team_a">Team A</string>
+    <string name="team_b">Team B</string>
+    <string name="_1_goal">+1 Goal</string>
+    <string name="_1_corner">+ 1 Corner</string>
+    <string name="_1_fouls">+ 1 Foul</string>
+
 </resources>
