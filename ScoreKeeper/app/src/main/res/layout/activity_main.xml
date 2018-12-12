@@ -1,229 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp"
-    tools:context=".activities.MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/team_a"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="16dp"
+        tools:context=".activities.MainActivity">
 
-    <TextView
-        android:id="@+id/team_a_goals_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zero_string"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toStartOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/team_a"
+            style="@style/scoreTextViewStyle"
+            android:text="@string/team_a"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/team_b_goals_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zero_string"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/team_a_goals_tv"
+            style="@style/scoreTextViewStyle"
+            android:text="@string/zero_string"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_a" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/team_b"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/team_b_goals_tv"
+            style="@style/scoreTextViewStyle"
+            android:text="@string/zero_string"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/team_b" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/team_b"
+            style="@style/scoreTextViewStyle"
+            android:text="@string/team_b"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/team_a_goal_button"
-        style="@style/buttonStyle"
-        android:text="@string/_1_goal"
-        app:layout_constraintEnd_toStartOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_a_goals_tv" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/team_a_corner_button"
-        style="@style/buttonStyle"
-        android:text="@string/_1_corner"
-        app:layout_constraintEnd_toStartOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_a_goal_button" />
+        <Button
+            android:id="@+id/team_a_goal_button"
+            style="@style/buttonStyle"
+            android:text="@string/_1_goal"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_a_goals_tv" />
 
-    <Button
-        android:id="@+id/team_a_foul_button"
-        style="@style/buttonStyle"
-        android:text="@string/_1_fouls"
-        app:layout_constraintEnd_toStartOf="@+id/view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_a_corner_button" />
+        <Button
+            android:id="@+id/team_a_corner_button"
+            style="@style/buttonStyle"
+            android:text="@string/_1_corner"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_a_goal_button" />
 
+        <Button
+            android:id="@+id/team_a_foul_button"
+            style="@style/buttonStyle"
+            android:text="@string/_1_fouls"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_a_corner_button" />
 
-    <ImageView
-        android:id="@+id/team_a_corner_icon"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/corner_icon_desc"
-        android:src="@drawable/ic_corner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/team_a_foul_button" />
+        <ImageView
+            android:id="@+id/team_a_corner_icon"
+            style="@style/iconStyle"
+            android:contentDescription="@string/corner_icon_desc"
+            android:src="@drawable/ic_corner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_a_foul_button" />
 
-    <ImageView
-        android:id="@+id/team_a_fouls_icon"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/fouls_icon_desc"
-        android:src="@drawable/ic_red_card"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/team_a_corner_icon" />
+        <ImageView
+            android:id="@+id/team_a_fouls_icon"
+            style="@style/iconStyle"
+            android:contentDescription="@string/fouls_icon_desc"
+            android:src="@drawable/ic_red_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_a_corner_icon" />
 
-    <TextView
-        android:id="@+id/team_a_corner_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zero_string"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/team_a_corner_icon"
-        app:layout_constraintEnd_toStartOf="@+id/team_b_corner_icon"
-        app:layout_constraintStart_toEndOf="@id/team_a_corner_icon"
-        app:layout_constraintTop_toTopOf="@+id/team_a_corner_icon" />
+        <TextView
+            android:id="@+id/team_a_corner_tv"
+            style="@style/metricsTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/team_a_corner_icon"
+            app:layout_constraintEnd_toStartOf="@+id/team_b_corner_icon"
+            app:layout_constraintStart_toEndOf="@id/team_a_corner_icon"
+            app:layout_constraintTop_toTopOf="@+id/team_a_corner_icon" />
 
-    <TextView
-        android:id="@+id/team_a_fouls_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zero_string"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/team_a_fouls_icon"
-        app:layout_constraintEnd_toStartOf="@+id/team_b_fouls_icon"
-        app:layout_constraintStart_toEndOf="@id/team_a_fouls_icon"
-        app:layout_constraintTop_toTopOf="@+id/team_a_fouls_icon" />
+        <TextView
+            android:id="@+id/team_a_fouls_tv"
+            style="@style/metricsTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/team_a_fouls_icon"
+            app:layout_constraintEnd_toStartOf="@+id/team_b_fouls_icon"
+            app:layout_constraintStart_toEndOf="@id/team_a_fouls_icon"
+            app:layout_constraintTop_toTopOf="@+id/team_a_fouls_icon" />
 
-    <Button
-        android:id="@+id/team_b_goal_button"
-        style="@style/buttonStyle"
-        android:text="@string/_1_goal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/team_b_goals_tv" />
+        <Button
+            android:id="@+id/team_b_goal_button"
+            style="@style/buttonStyle"
+            android:text="@string/_1_goal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/team_b_goals_tv" />
 
-    <Button
-        android:id="@+id/team_b_corner_button"
-        style="@style/buttonStyle"
-        android:text="@string/_1_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/team_b_goal_button" />
+        <Button
+            android:id="@+id/team_b_corner_button"
+            style="@style/buttonStyle"
+            android:text="@string/_1_corner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/team_b_goal_button" />
 
-    <Button
-        android:id="@+id/team_b_foul_button"
-        style="@style/buttonStyle"
-        android:text="@string/_1_fouls"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/team_b_corner_button" />
+        <Button
+            android:id="@+id/team_b_foul_button"
+            style="@style/buttonStyle"
+            android:text="@string/_1_fouls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/team_b_corner_button" />
 
-    <ImageView
-        android:id="@+id/team_b_corner_icon"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/corner_icon_desc"
-        android:src="@drawable/ic_corner"
-        app:layout_constraintStart_toStartOf="@id/view"
-        app:layout_constraintTop_toBottomOf="@id/team_b_foul_button" />
+        <ImageView
+            android:id="@+id/team_b_corner_icon"
+            style="@style/iconStyle"
+            android:contentDescription="@string/corner_icon_desc"
+            android:src="@drawable/ic_corner"
+            app:layout_constraintStart_toStartOf="@id/view"
+            app:layout_constraintTop_toBottomOf="@id/team_b_foul_button" />
 
-    <ImageView
-        android:id="@+id/team_b_fouls_icon"
-        android:layout_width="@dimen/icon_size"
-        android:layout_height="@dimen/icon_size"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/fouls_icon_desc"
-        android:src="@drawable/ic_red_card"
-        app:layout_constraintStart_toStartOf="@id/view"
-        app:layout_constraintTop_toBottomOf="@id/team_b_corner_icon" />
+        <ImageView
+            android:id="@+id/team_b_fouls_icon"
+            style="@style/iconStyle"
+            android:contentDescription="@string/fouls_icon_desc"
+            android:src="@drawable/ic_red_card"
+            app:layout_constraintStart_toStartOf="@id/view"
+            app:layout_constraintTop_toBottomOf="@+id/team_b_corner_icon" />
 
-    <TextView
-        android:id="@+id/team_b_corner_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zero_string"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/team_a_corner_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/team_b_corner_icon"
-        app:layout_constraintTop_toTopOf="@+id/team_b_corner_icon" />
+        <TextView
+            android:id="@+id/team_b_corner_tv"
+            style="@style/metricsTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/team_a_corner_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/team_b_corner_icon"
+            app:layout_constraintTop_toTopOf="@+id/team_b_corner_icon" />
 
-    <TextView
-        android:id="@+id/team_b_fouls_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/zero_string"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="@+id/team_b_fouls_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/team_b_fouls_icon"
-        app:layout_constraintTop_toTopOf="@+id/team_b_fouls_icon" />
+        <TextView
+            android:id="@+id/team_b_fouls_tv"
+            style="@style/metricsTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/team_b_fouls_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/team_b_fouls_icon"
+            app:layout_constraintTop_toTopOf="@+id/team_b_fouls_icon" />
 
-    <Button
-        android:id="@+id/reset_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="8dp"
-        android:enabled="false"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="Reset"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/reset_button"
+            style="@style/buttonStyle"
+            android:backgroundTint="@color/colorPrimary"
+            android:enabled="false"
+            android:text="@string/reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_a_fouls_icon" />
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View viewClicked) {
-        findViewById(R.id.reset_button).setEnabled(true);
+        if (!findViewById(R.id.reset_button).isEnabled())
+            findViewById(R.id.reset_button).setEnabled(true);
         switch (viewClicked.getId()) {
             case R.id.team_a_corner_button:
                 changeTextView(aCornersTv, ++aTeamCorners);
