@@ -6,10 +6,9 @@
     <string name="team_a">Team A</string>
     <string name="team_b">Team B</string>
     <string name="_1_goal">+1 Goal</string>
-    <string name="_1_corner">+ 1 Corner</string>
-    <string name="_1_fouls">+ 1 Foul</string>
-    <string name="reset_message">Are you sure about rest every things ?</string>
+    <string name="_1_corner">+1 Corner</string>
+    <string name="_1_fouls">+1 Foul</string>
+    <string name="reset_message">Are you sure about reset every thing to zero?</string>
     <string name="cancel">Cancel</string>
     <string name="reset">Reset</string>
-
 </resources>

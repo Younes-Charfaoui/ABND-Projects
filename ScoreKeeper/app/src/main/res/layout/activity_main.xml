@@ -84,7 +84,7 @@
             style="@style/iconStyle"
             android:contentDescription="@string/corner_icon_desc"
             android:src="@drawable/ic_corner"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/team_a_foul_button"
             app:layout_constraintTop_toBottomOf="@id/team_a_foul_button" />
 
         <ImageView
@@ -92,7 +92,7 @@
             style="@style/iconStyle"
             android:contentDescription="@string/fouls_icon_desc"
             android:src="@drawable/ic_red_card"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/team_a_corner_icon"
             app:layout_constraintTop_toBottomOf="@id/team_a_corner_icon" />
 
         <TextView
@@ -140,7 +140,7 @@
             style="@style/iconStyle"
             android:contentDescription="@string/corner_icon_desc"
             android:src="@drawable/ic_corner"
-            app:layout_constraintStart_toStartOf="@id/helper_view"
+            app:layout_constraintStart_toStartOf="@+id/team_b_foul_button"
             app:layout_constraintTop_toBottomOf="@id/team_b_foul_button" />
 
         <ImageView
@@ -148,7 +148,7 @@
             style="@style/iconStyle"
             android:contentDescription="@string/fouls_icon_desc"
             android:src="@drawable/ic_red_card"
-            app:layout_constraintStart_toStartOf="@id/helper_view"
+            app:layout_constraintStart_toStartOf="@+id/team_b_corner_icon"
             app:layout_constraintTop_toBottomOf="@+id/team_b_corner_icon" />
 
         <TextView
