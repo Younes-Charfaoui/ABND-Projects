@@ -18,12 +18,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         DialogInterface.OnClickListener {
 
     // integers variables to hold the current metrics of the game.
-    private int aTeamGoals = 0, bTeamGoals = 0, aTeamFouls = 0,
-            bTeamFouls = 0, aTeamCorners = 0, bTeamCorners = 0;
+    private int aTeamGoals = 0;
+    private int bTeamGoals = 0;
+    private int aTeamFouls = 0;
+    private int bTeamFouls = 0;
+    private int aTeamCorners = 0;
+    private int bTeamCorners = 0;
 
     // textViews variables to reference the textViews.
-    private TextView aGoalsTv, bGoalsTv, aFoulsTv,
-            bFoulsTv, aCornersTv, bCornersTv;
+    private TextView aGoalsTv;
+    private TextView bGoalsTv;
+    private TextView aFoulsTv;
+    private TextView bFoulsTv;
+    private TextView aCornersTv;
+    private TextView bCornersTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
