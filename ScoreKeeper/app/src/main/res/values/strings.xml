@@ -8,5 +8,8 @@
     <string name="_1_goal">+1 Goal</string>
     <string name="_1_corner">+ 1 Corner</string>
     <string name="_1_fouls">+ 1 Foul</string>
+    <string name="reset_message">Are You Sure You are going to lose all your data.</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
 
 </resources>

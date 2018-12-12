@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_flag" />
-                            <entry key="sourceFile" value="C:\Users\Charfaoui Younes" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_red_card" />
+                            <entry key="sourceFile" value="C:\Users\Charfaoui Younes\Desktop\red-card.svg" />
                           </map>
                         </option>
                       </PersistentState>

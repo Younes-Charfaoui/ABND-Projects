@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/team_a_scores"
+        android:id="@+id/team_a_goals_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/team_b_scores"
+        android:id="@+id/team_b_goals_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,7 +72,7 @@
         android:text="@string/_1_goal"
         app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_a_scores" />
+        app:layout_constraintTop_toBottomOf="@+id/team_a_goals_tv" />
 
     <Button
         android:id="@+id/team_a_corner_button"
@@ -93,28 +93,28 @@
 
     <ImageView
         android:id="@+id/team_a_corner_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/corner_icon_desc"
-        android:src="@drawable/ic_flag"
+        android:src="@drawable/ic_corner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/team_a_foul_button" />
 
     <ImageView
         android:id="@+id/team_a_fouls_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/fouls_icon_desc"
-        android:src="@drawable/ic_flag"
+        android:src="@drawable/ic_red_card"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/team_a_corner_icon" />
 
     <TextView
-        android:id="@+id/team_a_team_a_corner_tv"
+        android:id="@+id/team_a_corner_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -145,7 +145,7 @@
         android:text="@string/_1_goal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/team_b_scores" />
+        app:layout_constraintTop_toBottomOf="@+id/team_b_goals_tv" />
 
     <Button
         android:id="@+id/team_b_corner_button"
@@ -165,23 +165,23 @@
 
     <ImageView
         android:id="@+id/team_b_corner_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/corner_icon_desc"
-        android:src="@drawable/ic_flag"
+        android:src="@drawable/ic_corner"
         app:layout_constraintStart_toStartOf="@id/view"
         app:layout_constraintTop_toBottomOf="@id/team_b_foul_button" />
 
     <ImageView
         android:id="@+id/team_b_fouls_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/fouls_icon_desc"
-        android:src="@drawable/ic_flag"
+        android:src="@drawable/ic_red_card"
         app:layout_constraintStart_toStartOf="@id/view"
         app:layout_constraintTop_toBottomOf="@id/team_b_corner_icon" />
 
@@ -210,5 +210,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/team_b_fouls_icon"
         app:layout_constraintTop_toTopOf="@+id/team_b_fouls_icon" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="8dp"
+        android:enabled="false"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Reset"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
