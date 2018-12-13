@@ -10,36 +10,29 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+/**
+ * This Activity about making a quiz for Android beginner developer like me.
+ * The app include variety of questions, it also includes submit button to check the response
+ * and give a grading, I've added a menuItem to also submit the responses to help user submit his
+ * answers rapidly and not to scroll every time to the end.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     // Radio Groups of different question.
-    RadioGroup questionFourRg;
-    RadioGroup questionNineRg;
-    RadioGroup questionSevenRg;
-    RadioGroup questionSixRg;
-    RadioGroup questionOneRg;
+    RadioGroup questionFourRg, questionNineRg, questionSevenRg, questionSixRg, questionOneRg;
     // The Edit Text for the question 3 and 8.
-    EditText eightQuestionEt;
-    EditText thirdQuestionEt;
+    EditText eightQuestionEt, thirdQuestionEt;
     // The Response Checkboxes for question 2, 5 and 10.
-    CheckBox intCb;
-    CheckBox charCb;
-    CheckBox floatCb;
-    CheckBox doubleCb;
-    CheckBox happyLayoutCb;
-    CheckBox clickLayoutCb;
-    CheckBox absoluteLayoutCb;
-    CheckBox scrollLayoutCb;
-    CheckBox kotlinCb;
-    CheckBox javaCb;
-    CheckBox phpCb;
-    CheckBox rubyCb;
+    CheckBox intCb, charCb, doubleCb, floatCb;
+    CheckBox happyLayoutCb, clickLayoutCb, absoluteLayoutCb, scrollLayoutCb;
+    CheckBox kotlinCb, javaCb, phpCb, rubyCb;
+    // Toast variable to display toast.
+    Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        // adding listener to the submit button.
         findViewById(R.id.submit_button).setOnClickListener(this);
         // initializing The EditTexts.
         eightQuestionEt = findViewById(R.id.edit_text_eight);
@@ -98,37 +91,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void reviewProcess() {
         int point = 0;
-        // Question one
+        // Question one checking process.
         int checked = questionOneRg.getCheckedRadioButtonId();
         if (checked == R.id.question_one_r2) point++;
-        // Question Two
+        // Question Two checking process.
         if (kotlinCb.isChecked() && javaCb.isChecked() && !phpCb.isChecked() && !rubyCb.isChecked())
             point++;
-        // Question Three
+        // Question Three checking process.
         String responseEt = thirdQuestionEt.getText().toString().trim().toLowerCase();
         if (responseEt.equals("view")) point++;
-        // Question Four
+        // Question Four checking process.
         checked = questionFourRg.getCheckedRadioButtonId();
         if (checked == R.id.question_four_r2) point++;
-        // Question Five
+        // Question Five checking process.
         if (happyLayoutCb.isChecked() && clickLayoutCb.isChecked() && !absoluteLayoutCb.isChecked() && !scrollLayoutCb.isChecked())
             point++;
-        // Question Six
+        // Question Six checking process.
         checked = questionSixRg.getCheckedRadioButtonId();
         if (checked == R.id.question_six_r1) point++;
-        // Question Seven
+        // Question Seven checking process.
         checked = questionSevenRg.getCheckedRadioButtonId();
         if (checked == R.id.question_seven_r1) point++;
-        // Question Eight
+        // Question Eight checking process.
         responseEt = eightQuestionEt.getText().toString().trim().toLowerCase();
         if (responseEt.equals("class")) point++;
-        // Question Nine
+        // Question Nine checking process.
         checked = questionNineRg.getCheckedRadioButtonId();
         if (checked == R.id.question_nine_r1) point++;
-        // Question Ten
+        // Question Ten checking process.
         if (intCb.isChecked() && charCb.isChecked() && floatCb.isChecked() && doubleCb.isChecked())
             point++;
-        // Displaying the Score.
-        Toast.makeText(this, "You got a score of " + point + "/10", Toast.LENGTH_SHORT).show();
+        // Displaying the Score. Checking if a Toast is Displayed then cancel it.
+        if (mToast != null)
+            mToast.cancel();
+        mToast = Toast.makeText(this, "You got a score of " + point + "/10", Toast.LENGTH_SHORT);
+        mToast.show();
     }
 }
