@@ -19,15 +19,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // The Edit Text for the question 3 and 8.
     EditText eightQuestionEt;
     EditText thirdQuestionEt;
-    // The Correct Response Checkboxes for question 2, 5 and 10.
+    // The Response Checkboxes for question 2, 5 and 10.
     CheckBox intCb;
     CheckBox charCb;
     CheckBox floatCb;
     CheckBox doubleCb;
     CheckBox happyLayoutCb;
     CheckBox clickLayoutCb;
+    CheckBox absoluteLayoutCb;
+    CheckBox scrollLayoutCb;
     CheckBox kotlinCb;
     CheckBox javaCb;
+    CheckBox phpCb;
+    CheckBox rubyCb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +51,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // initializing The CheckBoxes.
         kotlinCb = findViewById(R.id.question_two_r1);
         javaCb = findViewById(R.id.question_two_r2);
+        phpCb = findViewById(R.id.question_two_r3);
+        rubyCb = findViewById(R.id.question_two_r4);
         intCb = findViewById(R.id.question_ten_r1);
         charCb = findViewById(R.id.question_ten_r2);
         floatCb = findViewById(R.id.question_ten_r3);
         doubleCb = findViewById(R.id.question_ten_r4);
         clickLayoutCb = findViewById(R.id.question_five_r4);
         happyLayoutCb = findViewById(R.id.question_five_r2);
+        scrollLayoutCb = findViewById(R.id.question_five_r1);
+        absoluteLayoutCb = findViewById(R.id.question_five_r3);
     }
 
     /**
      * The Overridden method of The ClickListener interface for handling the Click on the views.
+     *
      * @param view which has been clicked on.
      */
     @Override
@@ -77,17 +86,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int point = 0;
         // Question one
         int checked = questionOneRg.getCheckedRadioButtonId();
-        if (checked == R.id.question_one_r1) point++;
+        if (checked == R.id.question_one_r2) point++;
         // Question Two
-        if (kotlinCb.isChecked() && javaCb.isChecked()) point++;
+        if (kotlinCb.isChecked() && javaCb.isChecked() && !phpCb.isChecked() && !rubyCb.isChecked())
+            point++;
         // Question Three
         String responseEt = thirdQuestionEt.getText().toString().trim().toLowerCase();
         if (responseEt.equals("view")) point++;
         // Question Four
         checked = questionFourRg.getCheckedRadioButtonId();
-        if (checked == R.id.question_four_r1) point++;
+        if (checked == R.id.question_four_r2) point++;
         // Question Five
-        if (happyLayoutCb.isChecked() && clickLayoutCb.isChecked()) point++;
+        if (happyLayoutCb.isChecked() && clickLayoutCb.isChecked() && !absoluteLayoutCb.isChecked() && !scrollLayoutCb.isChecked())
+            point++;
         // Question Six
         checked = questionSixRg.getCheckedRadioButtonId();
         if (checked == R.id.question_six_r1) point++;
@@ -96,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (checked == R.id.question_seven_r1) point++;
         // Question Eight
         responseEt = eightQuestionEt.getText().toString().trim().toLowerCase();
-        if (responseEt.contains("class")) point++;
+        if (responseEt.equals("class")) point++;
         // Question Nine
         checked = questionNineRg.getCheckedRadioButtonId();
         if (checked == R.id.question_nine_r1) point++;
