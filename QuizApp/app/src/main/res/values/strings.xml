@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">Quiz App</string>
+    <string name="question_one">What is the current version of Android?</string>
+    <string name="question_one_r1">Marshmallow</string>
+    <string name="question_one_r2">Pie</string>
+    <string name="question_one_r3">Kitkat</string>
+    <string name="question_two">Which are the Languages you can program with in Android?</string>
+
+    <string name="question_thee">All the views in android inherent from the class ..</string>
+    <string name="question_thee_r1">Java</string>
+    <string name="question_thee_r2">Kotlin</string>
+    <string name="question_thee_r3">Ruby</string>
+    <string name="question_thee_r4">Php</string>
+
+    <string name="question_four">To display a text in android we use?</string>
+    <string name="question_four_r1">ImageView</string>
+    <string name="question_four_r2">TextView</string>
+    <string name="question_four_r3">ProgressBar</string>
+
+    <string name="question_five">Which of this is not a ViewGroup in Android?</string>
+    <string name="question_five_r1">ScrollLayout</string>
+    <string name="question_five_r2">HappyLayout</string>
+    <string name="question_five_r3">AbsoluteLayout</string>
+    <string name="question_five_r4">ClickLayout</string>
+
+    <string name="question_six">Which Unit to use when working with Text?</string>
+    <string name="question_six_r1">sp</string>
+    <string name="question_six_r2">dp</string>
+    <string name="question_six_r3">mm</string>
+    <string name="question_six_r4">in</string>
+
+    <string name="question_seven">What is The first method called when an activity is created?</string>
+    <string name="question_seven_r1">OnCreate</string>
+    <string name="question_seven_r2">OnPause</string>
+    <string name="question_seven_r3">OnDestroy</string>
+
+    <string name="question_eight">What is Keyword to declare  a class in Java?</string>
+
+    <string name="question_nine">The method that return nothing has a return type of ?</string>
+    <string name="question_nine_r1">Void</string>
+    <string name="question_nine_r2">int</string>
+    <string name="question_nine_r3">Object</string>
+
+    <string name="question_ten">Which of this is a primitive type in java?</string>
+    <string name="question_ten_r1">int</string>
+    <string name="question_ten_r2">char</string>
+    <string name="question_ten_r3">float</string>
+    <string name="question_ten_r4">double</string>
+
 </resources>
