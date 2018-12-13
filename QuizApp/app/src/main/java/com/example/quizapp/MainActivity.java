@@ -2,6 +2,8 @@ package com.example.quizapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -63,17 +65,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         absoluteLayoutCb = findViewById(R.id.question_five_r3);
     }
 
-    /**
-     * The Overridden method of The ClickListener interface for handling the Click on the views.
-     *
-     * @param view which has been clicked on.
-     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.submit_button:
                 reviewProcess();
                 break;
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.submit_menu_item:
+                reviewProcess();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -117,5 +131,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Displaying the Score.
         Toast.makeText(this, "You got a score of " + point + "/10", Toast.LENGTH_SHORT).show();
     }
-
 }
