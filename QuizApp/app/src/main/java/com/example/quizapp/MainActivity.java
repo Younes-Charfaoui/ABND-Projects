@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.submit_button:
-                reviewProcess();
+                gradingProcess();
                 break;
         }
     }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.submit_menu_item:
-                reviewProcess();
+                gradingProcess();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * the correct response is selected of typed, if so it will update a variable call point
      * that will hold the result points, and finally we output this result via a Toast message.
      */
-    private void reviewProcess() {
+    private void gradingProcess() {
         int point = 0;
         // Question one checking process.
         int checked = questionOneRg.getCheckedRadioButtonId();
