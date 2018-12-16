@@ -2,7 +2,7 @@ package com.example.musicalstructure.models;
 
 import java.util.List;
 
-class Data {
+public class Data {
 
     private int image;
     private String name;
