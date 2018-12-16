@@ -1,8 +1,10 @@
-package com.example.musicalstructure;
+package com.example.musicalstructure.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.example.musicalstructure.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
