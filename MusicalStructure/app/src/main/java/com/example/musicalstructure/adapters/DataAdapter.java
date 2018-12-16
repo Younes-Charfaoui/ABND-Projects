@@ -2,9 +2,14 @@ package com.example.musicalstructure.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.musicalstructure.R;
+import com.example.musicalstructure.activities.MusicActivity;
 import com.example.musicalstructure.models.Data;
 
 import java.util.List;
@@ -23,14 +28,20 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
 
     @NonNull
     @Override
-
     public DataViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        return null;
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.data_list_item, viewGroup, false);
+        return new DataViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DataViewHolder viewHolder, int position) {
-
+        Data data = dataList.get(position);
+        if (typeData == MusicActivity.TYPE_ALBUM || typeData == MusicActivity.TYPE_ARTIST) {
+            viewHolder.dataImage.setVisibility(View.VISIBLE);
+            viewHolder.dataImage.setImageResource(data.getImage());
+        }
+        viewHolder.dataName.setText(data.getName());
     }
 
     @Override
@@ -40,8 +51,14 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
 
     class DataViewHolder extends RecyclerView.ViewHolder {
 
-        public DataViewHolder(@NonNull View itemView) {
+        private ImageView dataImage;
+        private TextView dataName;
+
+        DataViewHolder(@NonNull View itemView) {
             super(itemView);
+            dataImage = itemView.findViewById(R.id.data_image);
+            dataName = itemView.findViewById(R.id.name_tv);
+            itemView.setOnClickListener(view -> listener.onDataClicked(dataList.get(getAdapterPosition())));
         }
     }
 }

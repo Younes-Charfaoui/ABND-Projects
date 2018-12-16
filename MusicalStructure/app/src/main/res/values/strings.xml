@@ -9,4 +9,5 @@
     <string name="artist_image">Artist Image</string>
     <string name="image_of_genre">Image of Genre</string>
     <string name="title_activity_music">MusicActivity</string>
+    <string name="image_representing_album_or_artist">Image representing Album or Artist</string>
 </resources>
