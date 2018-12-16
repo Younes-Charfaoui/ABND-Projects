@@ -1,5 +1,6 @@
 package com.example.musicalstructure.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,16 +22,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
         switch (view.getId()) {
             case R.id.album_card:
+                goToActivity(MusicActivity.TYPE_ALBUM);
                 break;
             case R.id.artist_card:
+                goToActivity(MusicActivity.TYPE_ARTIST);
                 break;
             case R.id.genre_card:
+                goToActivity(MusicActivity.TYPE_GENRE);
                 break;
             case R.id.playlist_card:
+                goToActivity(MusicActivity.TYPE_PLAYLIST);
                 break;
         }
+    }
 
+    private void goToActivity(int type) {
+        Intent intent = new Intent(this, MusicActivity.class);
+        intent.putExtra(MusicActivity.KEY_TYPE, type);
+        startActivity(intent);
     }
 }
