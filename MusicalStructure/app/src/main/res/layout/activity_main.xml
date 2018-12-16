@@ -32,6 +32,7 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="3"
+                android:contentDescription="@string/album_image"
                 android:src="@drawable/ic_one" />
 
             <TextView
@@ -67,6 +68,7 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="3"
+                android:contentDescription="@string/artist_image"
                 android:src="@drawable/ic_two" />
 
             <TextView
@@ -102,6 +104,7 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="3"
+                android:contentDescription="@string/image_of_genre"
                 android:src="@drawable/ic_four" />
 
             <TextView
@@ -138,6 +141,7 @@
                 android:layout_height="0dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="3"
+                android:contentDescription="@string/playlist_description"
                 android:src="@drawable/ic_three" />
 
             <TextView

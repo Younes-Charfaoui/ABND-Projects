@@ -4,4 +4,8 @@
     <string name="artist_album">Artist</string>
     <string name="playlist_string">Playlist</string>
     <string name="genre_string">Genre</string>
+    <string name="playlist_description">Playlist Image</string>
+    <string name="album_image">Album Image</string>
+    <string name="artist_image">Artist Image</string>
+    <string name="image_of_genre">Image of Genre</string>
 </resources>
