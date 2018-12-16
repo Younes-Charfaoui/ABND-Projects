@@ -1,6 +1,8 @@
 package com.example.musicalstructure.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +13,8 @@ import com.example.musicalstructure.adapters.DataAdapter;
 import com.example.musicalstructure.adapters.DataListener;
 import com.example.musicalstructure.models.Data;
 import com.example.musicalstructure.utils.DataProvider;
+
+import java.util.ArrayList;
 
 public class MusicActivity extends AppCompatActivity implements DataListener {
 
@@ -61,6 +65,9 @@ public class MusicActivity extends AppCompatActivity implements DataListener {
 
     @Override
     public void onDataClicked(Data data) {
-
+        Intent songsIntent = new Intent(this, SongActivity.class);
+        songsIntent.putParcelableArrayListExtra(SongActivity.KEY_SONGS,
+                (ArrayList<? extends Parcelable>) data.getSongs());
+        startActivity(songsIntent);
     }
 }

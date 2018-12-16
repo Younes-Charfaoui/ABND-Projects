@@ -1,6 +1,9 @@
 package com.example.musicalstructure.models;
 
-public class Song {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Song implements Parcelable {
 
     private String name;
     private String artist;
@@ -55,4 +58,38 @@ public class Song {
     public void setImageResource(int imageResource) {
         this.imageResource = imageResource;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeString(this.artist);
+        dest.writeString(this.album);
+        dest.writeString(this.length);
+        dest.writeInt(this.imageResource);
+    }
+
+    protected Song(Parcel in) {
+        this.name = in.readString();
+        this.artist = in.readString();
+        this.album = in.readString();
+        this.length = in.readString();
+        this.imageResource = in.readInt();
+    }
+
+    public static final Parcelable.Creator<Song> CREATOR = new Parcelable.Creator<Song>() {
+        @Override
+        public Song createFromParcel(Parcel source) {
+            return new Song(source);
+        }
+
+        @Override
+        public Song[] newArray(int size) {
+            return new Song[size];
+        }
+    };
 }

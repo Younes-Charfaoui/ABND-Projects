@@ -21,6 +21,15 @@
             android:name=".activities.MusicActivity"
             android:parentActivityName=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.SongActivity"
+            android:label="@string/title_activity_song"
+            android:parentActivityName=".activities.MusicActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.musicalstructure.activities.MusicActivity" />
+        </activity>
     </application>
 
 </manifest>
