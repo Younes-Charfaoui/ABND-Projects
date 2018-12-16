@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Musical Structure</string>
+    <string name="album_string">Album</string>
+    <string name="artist_album">Artist</string>
+    <string name="playlist_string">Playlist</string>
+    <string name="genre_string">Genre</string>
 </resources>
