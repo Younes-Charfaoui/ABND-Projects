@@ -12,4 +12,5 @@
     <string name="image_representing_album_or_artist">Image representing Album or Artist</string>
     <string name="image_representing_song">Image representing Song</string>
     <string name="title_activity_song">SongActivity</string>
+    <string name="title_activity_now_playing">NowPlayingActivity</string>
 </resources>
