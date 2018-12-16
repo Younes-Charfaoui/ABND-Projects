@@ -2,11 +2,17 @@ package com.example.musicalstructure.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.example.musicalstructure.R;
+import com.example.musicalstructure.adapters.DataAdapter;
+import com.example.musicalstructure.adapters.DataListener;
+import com.example.musicalstructure.models.Data;
+import com.example.musicalstructure.utils.DataProvider;
 
-public class MusicActivity extends AppCompatActivity {
+public class MusicActivity extends AppCompatActivity implements DataListener {
 
     public static final String KEY_TYPE = "keyType";
     public static final int TYPE_ARTIST = 101;
@@ -21,6 +27,20 @@ public class MusicActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         int type = getIntent().getIntExtra(KEY_TYPE, 100);
+        setActivityName(type);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        RecyclerView dataRecyclerView = findViewById(R.id.data_recycler_view);
+        DataAdapter adapter = new DataAdapter(DataProvider.getData(type), type, this);
+        LinearLayoutManager manager = new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false);
+        dataRecyclerView.setAdapter(adapter);
+        dataRecyclerView.setLayoutManager(manager);
+    }
+
+    private void setActivityName(int type) {
         switch (type) {
             case TYPE_ARTIST:
                 setTitle("Artists");
@@ -37,8 +57,10 @@ public class MusicActivity extends AppCompatActivity {
             default:
                 setTitle("Songs");
         }
-        if (getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public void onDataClicked(Data data) {
+
+    }
 }

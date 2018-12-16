@@ -9,8 +9,9 @@
     tools:showIn="@layout/activity_music">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/music_recycler_view"
+        android:id="@+id/data_recycler_view"
         android:layout_width="match_parent"
+        tools:listitem="@layout/data_list_item"
         android:layout_height="match_parent" />
 
 </android.support.constraint.ConstraintLayout>

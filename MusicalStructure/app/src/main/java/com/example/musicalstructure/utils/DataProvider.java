@@ -30,7 +30,8 @@ public class DataProvider {
                 return genreList;
             case MusicActivity.TYPE_ALBUM:
                 return albumList;
+            default:
+                return albumList;
         }
-
     }
 }
