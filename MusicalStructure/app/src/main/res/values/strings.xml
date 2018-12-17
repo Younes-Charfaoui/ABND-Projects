@@ -13,4 +13,10 @@
     <string name="image_representing_song">Image representing Song</string>
     <string name="title_activity_song">SongActivity</string>
     <string name="title_activity_now_playing">NowPlayingActivity</string>
+    <string name="skip_next_description">Skip Next Icon Image</string>
+    <string name="skip_previous_play">Play Icon Image</string>
+    <string name="replay_icon_description">Replay Icon Image</string>
+    <string name="pause_icon_description">Pause Icon Image</string>
+    <string name="song_image">Song Image</string>
+    <string name="skip_previous_description">Skip Previous Icon Description.</string>
 </resources>

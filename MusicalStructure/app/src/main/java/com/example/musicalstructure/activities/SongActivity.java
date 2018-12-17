@@ -1,5 +1,6 @@
 package com.example.musicalstructure.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,6 +39,8 @@ public class SongActivity extends AppCompatActivity implements SongListener {
 
     @Override
     public void onSongClicked(Song song) {
-
+        Intent songIntent = new Intent(this, NowPlayingActivity.class);
+        songIntent.putExtra(NowPlayingActivity.KEY_SONG, song);
+        startActivity(songIntent);
     }
 }

@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.NowPlayingActivity"
     tools:showIn="@layout/activity_now_playing">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/play_song_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/song_image"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/play_song_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:textSize="30sp"
+        tools:text="@tools:sample/full_names" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            style="@style/icon_style"
+            android:contentDescription="@string/skip_previous_description"
+            android:src="@drawable/ic_skip_previous_black_24dp" />
+
+        <ImageView
+            style="@style/icon_style"
+            android:contentDescription="@string/skip_previous_play"
+            android:src="@drawable/ic_play_arrow_black_24dp" />
+
+
+        <ImageView
+            style="@style/icon_style"
+            android:contentDescription="@string/pause_icon_description"
+            android:src="@drawable/ic_pause_black_24dp" />
+
+        <ImageView
+            style="@style/icon_style"
+            android:contentDescription="@string/skip_next_description"
+            android:src="@drawable/ic_skip_next_black_24dp" />
+
+        <ImageView
+            style="@style/icon_style"
+            android:contentDescription="@string/replay_icon_description"
+            android:src="@drawable/ic_replay_black_24dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
