@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Playlist extends Data {
 
-    Playlist(List<Song> songs, String name) {
+    public Playlist(List<Song> songs, String name) {
         super(songs, name);
     }
 }
