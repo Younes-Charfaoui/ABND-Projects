@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Musical Structure</string>
+    <string name="app_name">Music Library</string>
     <string name="album_string">Album</string>
     <string name="artist_album">Artist</string>
     <string name="playlist_string">Playlist</string>
@@ -19,4 +19,5 @@
     <string name="pause_icon_description">Pause Icon Image</string>
     <string name="song_image">Song Image</string>
     <string name="skip_previous_description">Skip Previous Icon Description.</string>
+    <string name="music_library">Music Library</string>
 </resources>

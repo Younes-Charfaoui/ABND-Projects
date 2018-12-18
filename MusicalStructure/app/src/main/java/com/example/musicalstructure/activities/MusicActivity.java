@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.example.musicalstructure.R;
 import com.example.musicalstructure.adapters.DataAdapter;
@@ -80,5 +81,15 @@ public class MusicActivity extends AppCompatActivity implements DataListener {
         songsIntent.putParcelableArrayListExtra(SongActivity.KEY_SONGS,
                 (ArrayList<? extends Parcelable>) data.getSongs());
         startActivity(songsIntent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
