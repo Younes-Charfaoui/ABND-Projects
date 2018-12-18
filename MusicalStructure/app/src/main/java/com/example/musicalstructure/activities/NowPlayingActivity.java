@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.example.musicalstructure.R;
 import com.example.musicalstructure.models.Song;
 
+/**
+ * This activity displaying the current music playing.
+ */
 public class NowPlayingActivity extends AppCompatActivity {
 
     public static final String KEY_SONG = "keySong";

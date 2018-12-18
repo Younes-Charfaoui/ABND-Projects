@@ -13,10 +13,12 @@ import com.example.musicalstructure.models.Song;
 
 import java.util.List;
 
+/**
+ * This adapter is for Songs for a given album, playlist, genre or artist.
+ */
 public class SongsAdapter extends RecyclerView.Adapter<SongsAdapter.DataViewHolder> {
 
     private List<Song> songList;
-
     private SongListener listener;
 
     public SongsAdapter(List<Song> songList, SongListener listener) {

@@ -7,6 +7,9 @@ import android.view.View;
 
 import com.example.musicalstructure.R;
 
+/**
+ * this Activity has the main interface from which the user can go to his music.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // method to go to an activity based user choice.
     private void goToActivity(int type) {
         Intent intent = new Intent(this, MusicActivity.class);
         intent.putExtra(MusicActivity.KEY_TYPE, type);

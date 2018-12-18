@@ -3,6 +3,9 @@ package com.example.musicalstructure.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * this class represent a song entity
+ */
 public class Song implements Parcelable {
 
     private String name;

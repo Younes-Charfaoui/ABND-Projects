@@ -16,8 +16,14 @@ import com.example.musicalstructure.utils.DataProvider;
 
 import java.util.ArrayList;
 
+/**
+ * Music Activity class for Any Data type of  genre, artist, playlist and album data.
+ * this is because we are using inheritance and polymorphism in our class design otherwise
+ * we can get 4 activity for each data type.
+ */
 public class MusicActivity extends AppCompatActivity implements DataListener {
 
+    // constants that help in intent parameters and data.
     public static final String KEY_TYPE = "keyType";
     public static final int TYPE_ARTIST = 101;
     public static final int TYPE_PLAYLIST = 102;
@@ -36,6 +42,7 @@ public class MusicActivity extends AppCompatActivity implements DataListener {
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // initializing the recycler view and providing it with some data.
         RecyclerView dataRecyclerView = findViewById(R.id.data_recycler_view);
         DataAdapter adapter = new DataAdapter(DataProvider.getData(type), type, this);
         LinearLayoutManager manager = new LinearLayoutManager(this,
@@ -44,6 +51,10 @@ public class MusicActivity extends AppCompatActivity implements DataListener {
         dataRecyclerView.setLayoutManager(manager);
     }
 
+    /**
+     * method to set title of the activity based on the type was in the intent.
+     * @param type of which the title will be base
+     */
     private void setActivityName(int type) {
         switch (type) {
             case TYPE_ARTIST:

@@ -14,6 +14,11 @@ import com.example.musicalstructure.models.Data;
 
 import java.util.List;
 
+/**
+ * Data Adapter class for recycler view of generic types, it can handle
+ * genre, artist, playlist and album data since we are using inheritance and polymorphism
+ * in our class design.
+ */
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder> {
 
     private List<Data> dataList;
@@ -38,6 +43,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DataViewHolder
     public void onBindViewHolder(@NonNull DataViewHolder viewHolder, int position) {
         Data data = dataList.get(position);
         if (typeData == MusicActivity.TYPE_ALBUM || typeData == MusicActivity.TYPE_ARTIST) {
+            // we want to display image of album or artist.
             viewHolder.dataImage.setVisibility(View.VISIBLE);
             viewHolder.dataImage.setImageResource(data.getImage());
         }

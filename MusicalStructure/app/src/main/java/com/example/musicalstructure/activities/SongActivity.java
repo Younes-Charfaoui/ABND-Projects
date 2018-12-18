@@ -14,6 +14,10 @@ import com.example.musicalstructure.models.Song;
 
 import java.util.List;
 
+/**
+ * this activity displays songs in a given album, genre, playlist or
+ * artist.
+ */
 public class SongActivity extends AppCompatActivity implements SongListener {
 
     public static final String KEY_SONGS = "keySongs";
@@ -29,6 +33,7 @@ public class SongActivity extends AppCompatActivity implements SongListener {
 
         List<Song> songs = getIntent().getParcelableArrayListExtra(KEY_SONGS);
 
+        // initializing the recycler view and providing it with incoming data.
         RecyclerView songRecyclerView = findViewById(R.id.songs_recycler_view);
         SongsAdapter adapter = new SongsAdapter(songs, this);
         LinearLayoutManager manager = new LinearLayoutManager(this,
