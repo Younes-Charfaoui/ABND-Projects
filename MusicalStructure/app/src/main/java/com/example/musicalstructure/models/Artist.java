@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Artist extends Data {
 
-    Artist(int image, List<Song> songs, String name) {
+    public Artist(int image, List<Song> songs, String name) {
         super(image, songs, name);
     }
 }
