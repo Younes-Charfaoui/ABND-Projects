@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * this addMethod is a helper addMethod for initializing the
+     * this Method is a helper Method for initializing the
      * view pager and the tab layout.
      */
     private void setupViewPagerAndTabLayout() {
@@ -70,6 +70,4 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_launcher_background));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_launcher_background));
     }
-
-
 }
