@@ -36,4 +36,146 @@
         <item>newlondoncafe.weebly.com</item>
     </string-array>
 
+    <string-array name="restaurant_one">
+        <item>Salut Restaurant Islington</item>
+        <item>Modern European restaurant.</item>
+        <item>412 Essex Rd, London N1 3PJ, UK</item>
+        <item>+44 20 3441 8808</item>
+        <item>salut-london.co.uk</item>
+    </string-array>
+
+    <string-array name="restaurant_two">
+        <item>Pitt Cue</item>
+        <item>Wood-smoked meats, from ribs to Mangalitza pork, plus craft cocktails in an industrial-rustic space.</item>
+        <item>The Avenue, 1 Devonshire Square, London EC2M 4YP, UK</item>
+        <item>+44 20 7324 7770</item>
+        <item>pittcue.co.uk</item>
+    </string-array>
+
+    <string-array name="restaurant_three">
+        <item>The Ledbury</item>
+        <item>Chef Brett Graham's innovative cooking, paired with fine wines in a smart, modern setting.</item>
+        <item>127 Ledbury Rd, London W11 2AQ, UK</item>
+        <item>+44 20 7792 9090</item>
+        <item>opentable.co.uk</item>
+    </string-array>
+
+    <string-array name="restaurant_four">
+        <item>Liman Restaurant</item>
+        <item>Mediterranean restaurant</item>
+        <item>60 Penton St, London N1 9PZ, UK</item>
+        <item>+44 20 3583 6442</item>
+        <item>liman.co.uk</item>
+    </string-array>
+
+    <string-array name="restaurant_five">
+        <item>Fishers</item>
+        <item>Busy chippie frying up traditional fish and chips to eat in or take away, open since 1982.</item>
+        <item>19 Fulham High St, Fulham, London SW6 3JH, UK</item>
+        <item>+44 20 7371 5555</item>
+        <item>No Website.</item>
+    </string-array>
+
+    <string-array name="restaurant_six">
+        <item>Sushi Tetsu</item>
+        <item>A small Japanese restaurant specialising in sushi and sashimi, with a chef's choice menu.</item>
+        <item>12 Jerusalem Passage, Clerkenwell, London EC1V 4JP, UK</item>
+        <item>+44 20 3217 0090</item>
+        <item>sushitetsu.co.uk</item>
+    </string-array>
+    <string-array name="restaurant_seven">
+        <item>Core by Clare Smyth</item>
+        <item>Seasonal British fine dining from ex Gordon Ramsay chef in laid-back, light and airy surroundings.</item>
+        <item>92 Kensington Park Rd, London W11 2PN, UK</item>
+        <item>+44 20 3937 5086</item>
+        <item>opentable.co.uk</item>
+    </string-array>
+
+    <string-array name="museum_one">
+        <item>Museum of London</item>
+        <item>The Museum of London documents the history of the UK's capital city from prehistoric to modern times and is located in the City of London on the London Wall, close to the Barbican Centre and is part of the Barbican complex of buildings created in the 1960s and 1970s to redevelop a bomb-damaged area of the City.</item>
+        <item>150 London Wall, London EC2Y 5HN, UK</item>
+        <item>+44 20 7001 9844</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="museum_two">
+        <item>British Museum</item>
+        <item>The British Museum, located in the Bloomsbury area of London, in the United Kingdom, is a public institution dedicated to human history, art and culture.</item>
+        <item>Great Russell St, Bloomsbury, London WC1B 3DG, UK</item>
+        <item>+44 20 7323 8299</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="museum_three">
+        <item>Natural History Museum, London</item>
+        <item>The Natural History Museum in London is a natural history museum that exhibits a vast range of specimens from various segments of natural history. It is one of three major museums on Exhibition Road in South Kensington, the others being the Science Museum and the Victoria and Albert Museum.</item>
+        <item>Cromwell Rd, Kensington, London SW7 5BD, UK</item>
+        <item>+44 20 7942 5000</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="museum_four">
+        <item>Victoria and Albert Museum</item>
+        <item>The Victoria and Albert Museum in London is the world's largest museum of decorative arts and design, housing a permanent collection of over 2.27 million objects. It was founded in 1852 and named after Queen Victoria and Prince Albert.</item>
+        <item>Cromwell Rd, Knightsbridge, London SW7 2RL, UK</item>
+        <item>+44 20 7942 2000</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="museum_five">
+        <item>Science Museum, London</item>
+        <item>he Science Museum is a major museum on Exhibition Road in South Kensington, London. It was founded in 1857 and today is one of the city's major tourist attractions, attracting 3.3 million visitors annually.</item>
+        <item>Exhibition Rd, Kensington, London SW7 2DD, UK</item>
+        <item>+44 333 241 4000</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="museum_six">
+        <item>National Gallery, London</item>
+        <item>The National Gallery is an art museum in Trafalgar Square in the City of Westminster, in Central London. Founded in 1824, it houses a collection of over 2,300 paintings dating from the mid-13th century to 1900.</item>
+        <item>Trafalgar Square, London WC2N 5DN, UK</item>
+        <item>+44 20 7747 2885</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="hotel_one">
+        <item>Park Plaza Westminster Bridge London</item>
+        <item>4-star hotel</item>
+        <item>200 Westminster Bridge Rd, Lambeth, London SE1 7UT, UK</item>
+        <item>+44 333 400 6112</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="hotel_two">
+        <item>The Tower Hotel</item>
+        <item>4-star hotel</item>
+        <item>St Katharine's Way, St Katharine's &amp; Wapping, London E1W 1LD, UK</item>
+        <item>+44 800 330 8005</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="hotel_three">
+        <item>MEININGER Hotel London Hyde Park</item>
+        <item>2-star hotel</item>
+        <item>65\-67 Queen's Gate, Kensington, London SW7 5JS, UK</item>
+        <item>+44 20 3318 1407</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="hotel_four">
+        <item>Travelodge London Central Covent Garden</item>
+        <item>3-star hotel</item>
+        <item>10 Drury Lane, High Holborn, London WC2B 5RE, United Kingdom</item>
+        <item>+44 871 984 6245</item>
+        <item>No website.</item>
+    </string-array>
+
+    <string-array name="hotel_five">
+        <item>Travelodge London Central</item>
+        <item>3-star hotel</item>
+        <item>1\-23 City Rd, London EC1Y 1AG, UK</item>
+        <item>+44 871 984 6333</item>
+        <item>No website.</item>
+    </string-array>
 </resources>
