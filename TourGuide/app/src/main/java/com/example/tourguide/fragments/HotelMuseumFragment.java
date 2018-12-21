@@ -51,19 +51,18 @@ public class HotelMuseumFragment extends Fragment {
 
         List<Place> dataList = new ArrayList<>();
         if (type == TYPE_MUSEUM) {
-            dataList.add(new Place(getResources().getStringArray(R.array.cafe_one)));
-            dataList.add(new Place(getResources().getStringArray(R.array.cafe_two)));
-            dataList.add(new Place(getResources().getStringArray(R.array.cafe_three)));
-            dataList.add(new Place(getResources().getStringArray(R.array.cafe_four)));
-            dataList.add(new Place(getResources().getStringArray(R.array.cafe_five)));
+            dataList.add(new Place(getResources().getStringArray(R.array.museum_one)));
+            dataList.add(new Place(getResources().getStringArray(R.array.museum_two)));
+            dataList.add(new Place(getResources().getStringArray(R.array.museum_three)));
+            dataList.add(new Place(getResources().getStringArray(R.array.museum_four)));
+            dataList.add(new Place(getResources().getStringArray(R.array.museum_five)));
+            dataList.add(new Place(getResources().getStringArray(R.array.museum_six)));
         } else {
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_one)));
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_two)));
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_three)));
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_four)));
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_five)));
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_six)));
-            dataList.add(new Place(getResources().getStringArray(R.array.restaurant_seven)));
+            dataList.add(new Place(getResources().getStringArray(R.array.hotel_one)));
+            dataList.add(new Place(getResources().getStringArray(R.array.hotel_two)));
+            dataList.add(new Place(getResources().getStringArray(R.array.hotel_three)));
+            dataList.add(new Place(getResources().getStringArray(R.array.hotel_four)));
+            dataList.add(new Place(getResources().getStringArray(R.array.hotel_five)));
         }
 
         HotelMuseumAdapter adapter = new HotelMuseumAdapter(dataList, TYPE_HOTEL == type);

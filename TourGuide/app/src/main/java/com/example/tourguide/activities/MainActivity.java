@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements RestaurantCafeLis
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_hotel));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_cafe));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_restaurant));
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_muesum));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_museum));
     }
 
     @Override
