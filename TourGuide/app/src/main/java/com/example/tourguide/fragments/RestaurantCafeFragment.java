@@ -14,12 +14,28 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.example.tourguide.R;
-import com.example.tourguide.adapters.PlacesAdapter;
+import com.example.tourguide.adapters.RestaurantCafeAdapter;
+import com.example.tourguide.models.RestaurantCafe;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class HotelsFragment extends Fragment {
+public class RestaurantCafeFragment extends Fragment {
+
+    private static final int TYPE_RESTAURANT = 101;
+    private static final int TYPE_CAFE = 102;
+    private static final String KEY_TYPE = "keyType";
+
+    public static RestaurantCafeFragment restaurantFragment() {
+        Bundle args = new Bundle();
+        args.putInt(KEY_TYPE , TYPE_RESTAURANT);
+        RestaurantCafeFragment fragment = new RestaurantCafeFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
 
     @Nullable
@@ -29,8 +45,15 @@ public class HotelsFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
 
+        List<RestaurantCafe> dataList = new ArrayList<>();
+        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_one), R.drawable.cafe_1));
+        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_two), R.drawable.cafe_2));
+        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_three), R.drawable.cafe_3));
+        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_four), R.drawable.cafe_4));
+        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_five), R.drawable.cafe_5));
 
-        PlacesAdapter adapter = new PlacesAdapter();
+
+        RestaurantCafeAdapter adapter = new RestaurantCafeAdapter(dataList);
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setAdapter(adapter);

@@ -9,14 +9,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.tourguide.R;
+import com.example.tourguide.models.RestaurantCafe;
 
 import java.util.List;
 
-public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.MailViewHolder> {
+public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAdapter.MailViewHolder> {
 
-    private List<String> dataList;
+    private List<RestaurantCafe> dataList;
+
+    public RestaurantCafeAdapter(List<RestaurantCafe> dataList) {
+        this.dataList = dataList;
+    }
 
 
     @NonNull
@@ -24,13 +31,15 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.MailViewHo
     public MailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.activity_main, parent, false);
+                .inflate(R.layout.place_list_item, parent, false);
         return new MailViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MailViewHolder holder, int position) {
-
+        RestaurantCafe place = dataList.get(position);
+        holder.titleTv.setText(place.getName());
+        holder.placeImageView.setImageResource(place.getImageResource());
     }
 
 
@@ -42,10 +51,19 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.MailViewHo
 
     class MailViewHolder extends RecyclerView.ViewHolder {
 
+        TextView titleTv;
+        ImageView placeImageView;
 
         MailViewHolder(View itemView) {
             super(itemView);
+            titleTv = itemView.findViewById(R.id.title_text_view);
+            placeImageView = itemView.findViewById(R.id.place_image_view);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                }
+            });
         }
     }
 }
