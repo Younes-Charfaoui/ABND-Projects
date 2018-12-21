@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.tourguide.fragments.RestaurantCafeFragment;
+
 
 public class TabLayoutAdapter extends FragmentPagerAdapter {
 
@@ -25,14 +27,13 @@ public class TabLayoutAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                break;
+                return RestaurantCafeFragment.cafeFragment();
             case 1:
-                break;
+                return RestaurantCafeFragment.restaurantFragment();
             case 2:
-                break;
+                return RestaurantCafeFragment.restaurantFragment();
             case 3:
-                break;
-
+                return RestaurantCafeFragment.restaurantFragment();
         }
         return null;
     }

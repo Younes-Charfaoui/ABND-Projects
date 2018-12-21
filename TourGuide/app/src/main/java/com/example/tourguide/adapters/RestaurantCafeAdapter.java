@@ -20,11 +20,12 @@ import java.util.List;
 public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAdapter.MailViewHolder> {
 
     private List<RestaurantCafe> dataList;
+    private RestaurantCafeListener listener;
 
-    public RestaurantCafeAdapter(List<RestaurantCafe> dataList) {
+    public RestaurantCafeAdapter(List<RestaurantCafe> dataList, RestaurantCafeListener listener) {
         this.dataList = dataList;
+        this.listener = listener;
     }
-
 
     @NonNull
     @Override
@@ -61,7 +62,7 @@ public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAd
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    listener.onRestaurantCafeItemClicked(dataList.get(getAdapterPosition()));
                 }
             });
         }

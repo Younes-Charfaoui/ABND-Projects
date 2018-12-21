@@ -31,7 +31,7 @@
     <string-array name="cafe_five">
         <item>New London Cafe</item>
         <item>Cosy cafe with vintage-inspired decor and a terrace, for organic coffees, breakfasts and burgers.</item>
-        <item>216 St Paul's Rd, Mildmay Ward, London N1 2LL, UK</item>
+        <item>216 St Paul\'s Rd, Mildmay Ward, London N1 2LL, UK</item>
         <item>+44 20 7354 7321</item>
         <item>newlondoncafe.weebly.com</item>
     </string-array>
@@ -54,7 +54,7 @@
 
     <string-array name="restaurant_three">
         <item>The Ledbury</item>
-        <item>Chef Brett Graham's innovative cooking, paired with fine wines in a smart, modern setting.</item>
+        <item>Chef Brett Graham\'s innovative cooking, paired with fine wines in a smart, modern setting.</item>
         <item>127 Ledbury Rd, London W11 2AQ, UK</item>
         <item>+44 20 7792 9090</item>
         <item>opentable.co.uk</item>
@@ -78,7 +78,7 @@
 
     <string-array name="restaurant_six">
         <item>Sushi Tetsu</item>
-        <item>A small Japanese restaurant specialising in sushi and sashimi, with a chef's choice menu.</item>
+        <item>A small Japanese restaurant specialising in sushi and sashimi, with a chef\'s choice menu.</item>
         <item>12 Jerusalem Passage, Clerkenwell, London EC1V 4JP, UK</item>
         <item>+44 20 3217 0090</item>
         <item>sushitetsu.co.uk</item>
@@ -93,7 +93,7 @@
 
     <string-array name="museum_one">
         <item>Museum of London</item>
-        <item>The Museum of London documents the history of the UK's capital city from prehistoric to modern times and is located in the City of London on the London Wall, close to the Barbican Centre and is part of the Barbican complex of buildings created in the 1960s and 1970s to redevelop a bomb-damaged area of the City.</item>
+        <item>The Museum of London documents the history of the UK\'s capital city from prehistoric to modern times and is located in the City of London on the London Wall, close to the Barbican Centre and is part of the Barbican complex of buildings created in the 1960s and 1970s to redevelop a bomb-damaged area of the City.</item>
         <item>150 London Wall, London EC2Y 5HN, UK</item>
         <item>+44 20 7001 9844</item>
         <item>No website.</item>
@@ -117,7 +117,7 @@
 
     <string-array name="museum_four">
         <item>Victoria and Albert Museum</item>
-        <item>The Victoria and Albert Museum in London is the world's largest museum of decorative arts and design, housing a permanent collection of over 2.27 million objects. It was founded in 1852 and named after Queen Victoria and Prince Albert.</item>
+        <item>The Victoria and Albert Museum in London is the world\'s largest museum of decorative arts and design, housing a permanent collection of over 2.27 million objects. It was founded in 1852 and named after Queen Victoria and Prince Albert.</item>
         <item>Cromwell Rd, Knightsbridge, London SW7 2RL, UK</item>
         <item>+44 20 7942 2000</item>
         <item>No website.</item>
@@ -125,7 +125,7 @@
 
     <string-array name="museum_five">
         <item>Science Museum, London</item>
-        <item>he Science Museum is a major museum on Exhibition Road in South Kensington, London. It was founded in 1857 and today is one of the city's major tourist attractions, attracting 3.3 million visitors annually.</item>
+        <item>he Science Museum is a major museum on Exhibition Road in South Kensington, London. It was founded in 1857 and today is one of the city\'s major tourist attractions, attracting 3.3 million visitors annually.</item>
         <item>Exhibition Rd, Kensington, London SW7 2DD, UK</item>
         <item>+44 333 241 4000</item>
         <item>No website.</item>
@@ -150,7 +150,7 @@
     <string-array name="hotel_two">
         <item>The Tower Hotel</item>
         <item>4-star hotel</item>
-        <item>St Katharine's Way, St Katharine's &amp; Wapping, London E1W 1LD, UK</item>
+        <item>St Katharine\'s Way, St Katharine\'s &amp; Wapping, London E1W 1LD, UK</item>
         <item>+44 800 330 8005</item>
         <item>No website.</item>
     </string-array>
@@ -158,7 +158,7 @@
     <string-array name="hotel_three">
         <item>MEININGER Hotel London Hyde Park</item>
         <item>2-star hotel</item>
-        <item>65\-67 Queen's Gate, Kensington, London SW7 5JS, UK</item>
+        <item>65\-67 Queen\'s Gate, Kensington, London SW7 5JS, UK</item>
         <item>+44 20 3318 1407</item>
         <item>No website.</item>
     </string-array>
@@ -178,4 +178,5 @@
         <item>+44 871 984 6333</item>
         <item>No website.</item>
     </string-array>
+    <string name="title_activity_detail">DetailActivity</string>
 </resources>

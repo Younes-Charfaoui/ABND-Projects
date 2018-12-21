@@ -6,12 +6,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.example.tourguide.R;
+import com.example.tourguide.adapters.RestaurantCafeListener;
 import com.example.tourguide.adapters.TabLayoutAdapter;
+import com.example.tourguide.models.RestaurantCafe;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RestaurantCafeListener {
 
     private ViewPager mMainViewPager;
     private TabLayout mTabLayout;
@@ -70,5 +73,10 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_cafe));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_restaurant));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_muesum));
+    }
+
+    @Override
+    public void onRestaurantCafeItemClicked(RestaurantCafe restaurantCafe) {
+        Toast.makeText(this, "Hi", Toast.LENGTH_SHORT).show();
     }
 }

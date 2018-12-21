@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 
 import com.example.tourguide.R;
 import com.example.tourguide.adapters.RestaurantCafeAdapter;
+import com.example.tourguide.adapters.RestaurantCafeListener;
 import com.example.tourguide.models.RestaurantCafe;
 
 import java.util.ArrayList;
@@ -30,12 +31,19 @@ public class RestaurantCafeFragment extends Fragment {
 
     public static RestaurantCafeFragment restaurantFragment() {
         Bundle args = new Bundle();
-        args.putInt(KEY_TYPE , TYPE_RESTAURANT);
+        args.putInt(KEY_TYPE, TYPE_RESTAURANT);
         RestaurantCafeFragment fragment = new RestaurantCafeFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
+    public static RestaurantCafeFragment cafeFragment() {
+        Bundle args = new Bundle();
+        args.putInt(KEY_TYPE, TYPE_CAFE);
+        RestaurantCafeFragment fragment = new RestaurantCafeFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 
     @Nullable
@@ -43,17 +51,27 @@ public class RestaurantCafeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_places, container, false);
 
+        int type = getArguments().getInt(KEY_TYPE, -1);
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
 
         List<RestaurantCafe> dataList = new ArrayList<>();
-        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_one), R.drawable.cafe_1));
-        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_two), R.drawable.cafe_2));
-        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_three), R.drawable.cafe_3));
-        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_four), R.drawable.cafe_4));
-        dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_five), R.drawable.cafe_5));
+        if (type == TYPE_CAFE) {
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_one), R.drawable.cafe_1));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_two), R.drawable.cafe_2));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_three), R.drawable.cafe_3));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_four), R.drawable.cafe_4));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_five), R.drawable.cafe_5));
+        } else {
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_one), R.drawable.restaurant_1));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_two), R.drawable.restaurant_2));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_three), R.drawable.restaurant_3));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_four), R.drawable.restaurant_4));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_five), R.drawable.restaurant_5));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_six), R.drawable.restaurant_6));
+            dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_seven), R.drawable.restaurant_7));
+        }
 
-
-        RestaurantCafeAdapter adapter = new RestaurantCafeAdapter(dataList);
+        RestaurantCafeAdapter adapter = new RestaurantCafeAdapter(dataList , (RestaurantCafeListener) getActivity());
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setAdapter(adapter);
