@@ -1,4 +1,39 @@
 <resources>
     <string name="app_name">Tour Guide</string>
+    <string-array name="cafe_one">
+        <item>Ace Cafe</item>
+        <item>A transport cafe since 1938, and a popular hangout for rockers, bikers and petrolheads ever since.</item>
+        <item>Ace Corner, N Circular Rd, London NW10 7UD, UK</item>
+        <item>+44 20 8961 1000</item>
+        <item>ace-cafe-london.com</item>
+    </string-array>
+    <string-array name="cafe_two">
+        <item>TAP Coffee</item>
+        <item>Coffee taken seriously in a welcoming light-filled spot with exposed girders and bench tables.</item>
+        <item>114 Tottenham Court Rd, Fitzrovia, London W1T 5AH, UK</item>
+        <item>No phones.</item>
+        <item>No website.</item>
+    </string-array>
+    <string-array name="cafe_three">
+        <item>The Monocle Café London</item>
+        <item>Light, compact, hipster coffee-house serving sandwiches, global snacks/meals and elegant patisserie.</item>
+        <item>18 Chiltern St, Marylebone, London W1U 7QA, UK</item>
+        <item>+44 20 7135 2040</item>
+        <item>No website.</item>
+    </string-array>
+    <string-array name="cafe_four">
+        <item>Lantana Cafe Fitzrovia</item>
+        <item>Takeaway coffee, breakfasts, Asian-tinged light lunches and weekend brunch in Australian-style cafe.</item>
+        <item>13 Charlotte Pl, Fitzrovia, London W1T 1SN, UK</item>
+        <item>+44 20 7637 3347</item>
+        <item>resdiary.com</item>
+    </string-array>
+    <string-array name="cafe_five">
+        <item>New London Cafe</item>
+        <item>Cosy cafe with vintage-inspired decor and a terrace, for organic coffees, breakfasts and burgers.</item>
+        <item>216 St Paul's Rd, Mildmay Ward, London N1 2LL, UK</item>
+        <item>+44 20 7354 7321</item>
+        <item>newlondoncafe.weebly.com</item>
+    </string-array>
 
 </resources>
