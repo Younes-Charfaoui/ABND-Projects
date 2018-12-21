@@ -19,7 +19,7 @@ import com.example.tourguide.R;
 import com.example.tourguide.adapters.PlacesAdapter;
 
 
-public class PlacesFragment extends Fragment {
+public class HotelsFragment extends Fragment {
 
 
     @Nullable

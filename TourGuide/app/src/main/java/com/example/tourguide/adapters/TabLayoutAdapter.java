@@ -23,30 +23,18 @@ public class TabLayoutAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        switch (mNumbersOfTabs) {
-            case 3:
-                switch (position) {
-                    case 0:
-
-                    case 1:
-
-                    case 2:
-
-                    default:
-                        return null;
-                }
+        switch (position) {
+            case 0:
+                break;
+            case 1:
+                break;
             case 2:
-                switch (position) {
-                    case 0:
+                break;
+            case 3:
+                break;
 
-                    case 1:
-
-                    default:
-                        return null;
-                }
-            default:
-                return null;
         }
+        return null;
     }
 
     @Override

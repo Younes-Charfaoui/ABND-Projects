@@ -3,9 +3,9 @@
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24.0"
-    tools:ignore="MissingDefaultResource"
-    android:viewportHeight="24.0">
+    android:viewportHeight="24.0"
+    tools:ignore="MissingDefaultResource">
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M4,10v7h3v-7L4,10zM10,10v7h3v-7h-3zM2,22h19v-3L2,19v3zM16,10v7h3v-7h-3zM11.5,1L2,6v2h19L21,6l-9.5,-5z"/>
+        android:pathData="M20,3L4,3v10c0,2.21 1.79,4 4,4h6c2.21,0 4,-1.79 4,-4v-3h2c1.11,0 2,-0.89 2,-2L22,5c0,-1.11 -0.89,-2 -2,-2zM20,8h-2L18,5h2v3zM2,21h18v-2L2,19v2z" />
 </vector>

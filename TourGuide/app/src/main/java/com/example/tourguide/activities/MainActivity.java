@@ -66,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
         if (mTabLayout.getTabCount() > 0) {
             mTabLayout.removeAllTabs();
         }
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_launcher_background));
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_launcher_background));
-        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_launcher_background));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_hotel));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_cafe));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_restaurant));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.ic_muesum));
     }
 }
