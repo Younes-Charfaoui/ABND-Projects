@@ -17,7 +17,7 @@ import com.example.tourguide.models.RestaurantCafe;
 
 import java.util.List;
 
-public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAdapter.MailViewHolder> {
+public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAdapter.RestaurantCafeHolder> {
 
     private List<RestaurantCafe> dataList;
     private RestaurantCafeListener listener;
@@ -29,15 +29,15 @@ public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAd
 
     @NonNull
     @Override
-    public MailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RestaurantCafeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.place_list_item, parent, false);
-        return new MailViewHolder(view);
+        return new RestaurantCafeHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MailViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RestaurantCafeHolder holder, int position) {
         RestaurantCafe place = dataList.get(position);
         holder.titleTv.setText(place.getName());
         holder.placeImageView.setImageResource(place.getImageResource());
@@ -50,12 +50,12 @@ public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAd
     }
 
 
-    class MailViewHolder extends RecyclerView.ViewHolder {
+    class RestaurantCafeHolder extends RecyclerView.ViewHolder {
 
         TextView titleTv;
         ImageView placeImageView;
 
-        MailViewHolder(View itemView) {
+        RestaurantCafeHolder(View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.title_text_view);
             placeImageView = itemView.findViewById(R.id.place_image_view);
