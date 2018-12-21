@@ -27,7 +27,7 @@
             tools:text="@tools:sample/full_names" />
 
         <ImageView
-            android:id="@+id/star_icon"
+            android:id="@+id/website_icon"
             style="@style/iconInfoStyle"
             android:layout_marginBottom="8dp"
             android:contentDescription="@string/star_icon"
@@ -64,10 +64,10 @@
         <TextView
             android:id="@+id/star_text_view"
             style="@style/textInfoStyle"
-            app:layout_constraintBottom_toBottomOf="@+id/star_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/website_icon"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/star_icon"
-            app:layout_constraintTop_toTopOf="@+id/star_icon"
+            app:layout_constraintStart_toEndOf="@+id/website_icon"
+            app:layout_constraintTop_toTopOf="@+id/website_icon"
             tools:text="@tools:sample/full_names" />
 
         <TextView
