@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="88dp">
+    android:layout_height="166dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,7 +13,74 @@
             android:id="@+id/title_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/full_names" />
+
+        <ImageView
+            android:id="@+id/website_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_globe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place_icon" />
+
+        <ImageView
+            android:id="@+id/place_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_place_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/call_icon" />
+
+        <ImageView
+            android:id="@+id/call_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_call_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+        <TextView
+            android:id="@+id/phone_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/call_icon"
+            app:layout_constraintStart_toEndOf="@+id/call_icon"
+            app:layout_constraintTop_toTopOf="@+id/call_icon"
+            tools:text="@tools:sample/us_phones" />
+
+        <TextView
+            android:id="@+id/website_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/website_icon"
+            app:layout_constraintStart_toEndOf="@+id/website_icon"
+            app:layout_constraintTop_toTopOf="@+id/website_icon"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/address_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/place_icon"
+            app:layout_constraintStart_toEndOf="@+id/place_icon"
+            app:layout_constraintTop_toTopOf="@+id/place_icon"
+            tools:text="@tools:sample/cities" />
 
     </android.support.constraint.ConstraintLayout>
 
