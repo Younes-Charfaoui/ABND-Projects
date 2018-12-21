@@ -1,7 +1,3 @@
-/*------------------------------------------------------------------------------
- - Copyright (c) 2018. This code was created by Younes Charfaoui in the process of Graduation Project for the year of  2018 , which is about creating a platform  for students and professors to help them in the communication and the get known of the university information and so on.
- -----------------------------------------------------------------------------*/
-
 package com.example.tourguide.adapters;
 
 import android.support.annotation.NonNull;
@@ -17,6 +13,9 @@ import com.example.tourguide.models.RestaurantCafe;
 
 import java.util.List;
 
+/**
+ * this adapter take care of loading and displaying data in lost for a recycler view for restaurant and cafe.
+ */
 public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAdapter.RestaurantCafeHolder> {
 
     private List<RestaurantCafe> dataList;
@@ -43,12 +42,10 @@ public class RestaurantCafeAdapter extends RecyclerView.Adapter<RestaurantCafeAd
         holder.placeImageView.setImageResource(place.getImageResource());
     }
 
-
     @Override
     public int getItemCount() {
         return dataList != null ? dataList.size() : 0;
     }
-
 
     class RestaurantCafeHolder extends RecyclerView.ViewHolder {
 

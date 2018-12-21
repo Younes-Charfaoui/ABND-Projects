@@ -1,7 +1,3 @@
-/*------------------------------------------------------------------------------
- - Copyright (c) 2018. This code was created by Younes Charfaoui in the process of Graduation Project for the year of  2018 , which is about creating a platform  for students and professors to help them in the communication and the get known of the university information and so on.
- -----------------------------------------------------------------------------*/
-
 package com.example.tourguide.adapters;
 
 import android.support.annotation.NonNull;
@@ -17,10 +13,13 @@ import com.example.tourguide.models.Place;
 
 import java.util.List;
 
+/**
+ * this adapter take care of loading and displaying data in lost for a recycler view for hotel and museum.
+ */
 public class HotelMuseumAdapter extends RecyclerView.Adapter<HotelMuseumAdapter.HotelMuseumHolder> {
 
     private List<Place> dataList;
-    private boolean isHotel;
+    private  boolean isHotel;
 
     public HotelMuseumAdapter(List<Place> dataList, boolean isHotel) {
         this.dataList = dataList;
@@ -50,12 +49,10 @@ public class HotelMuseumAdapter extends RecyclerView.Adapter<HotelMuseumAdapter.
         }
     }
 
-
     @Override
     public int getItemCount() {
         return dataList != null ? dataList.size() : 0;
     }
-
 
     class HotelMuseumHolder extends RecyclerView.ViewHolder {
 

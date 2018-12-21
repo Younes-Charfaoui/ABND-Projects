@@ -3,12 +3,16 @@ package com.example.tourguide.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tourguide.R;
 import com.example.tourguide.models.RestaurantCafe;
 
+/**
+ * This activity handle the displaying of information about restaurant and cafe.
+ */
 public class DetailActivity extends AppCompatActivity {
 
     public static final String KEY_OBJECT = "keyObject";
@@ -39,4 +43,13 @@ public class DetailActivity extends AppCompatActivity {
         placeImageView.setImageResource(place.getImageResource());
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

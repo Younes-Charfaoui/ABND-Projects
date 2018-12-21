@@ -2,8 +2,12 @@ package com.example.tourguide.models;
 
 import android.os.Parcel;
 
+/**
+ * this object save the information about Restaurant and cafe.
+ */
 public class RestaurantCafe extends Place {
 
+    // add more fields if we like.
     private int imageResource;
 
     public RestaurantCafe(String[] data, int imageResource) {

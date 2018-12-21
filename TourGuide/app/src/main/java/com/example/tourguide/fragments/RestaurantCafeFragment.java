@@ -18,13 +18,16 @@ import com.example.tourguide.models.RestaurantCafe;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * this fragment take care of loading and handling user interface for Restaurant and cafe list.
+ */
 public class RestaurantCafeFragment extends Fragment {
 
     private static final int TYPE_RESTAURANT = 101;
     private static final int TYPE_CAFE = 102;
     private static final String KEY_TYPE = "keyType";
 
+    // static method for creating restaurant fragment.
     public static RestaurantCafeFragment restaurantFragment() {
         Bundle args = new Bundle();
         args.putInt(KEY_TYPE, TYPE_RESTAURANT);
@@ -33,6 +36,7 @@ public class RestaurantCafeFragment extends Fragment {
         return fragment;
     }
 
+    // static method for creating cafe fragment.
     public static RestaurantCafeFragment cafeFragment() {
         Bundle args = new Bundle();
         args.putInt(KEY_TYPE, TYPE_CAFE);
@@ -41,15 +45,14 @@ public class RestaurantCafeFragment extends Fragment {
         return fragment;
     }
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_places, container, false);
-
+        // getting the type.
         int type = getArguments().getInt(KEY_TYPE, -1);
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-
+        // create and empty list.
         List<RestaurantCafe> dataList = new ArrayList<>();
         if (type == TYPE_CAFE) {
             dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.cafe_one), R.drawable.cafe_1));
@@ -66,15 +69,13 @@ public class RestaurantCafeFragment extends Fragment {
             dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_six), R.drawable.restaurant_6));
             dataList.add(new RestaurantCafe(getResources().getStringArray(R.array.restaurant_seven), R.drawable.restaurant_7));
         }
-
+        // creating the adapter.
         RestaurantCafeAdapter adapter = new RestaurantCafeAdapter(dataList , (RestaurantCafeListener) getActivity());
-
+        // setting the recycler view parameters
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
         return view;
     }
-
-
 }

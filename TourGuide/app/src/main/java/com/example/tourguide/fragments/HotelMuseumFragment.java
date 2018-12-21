@@ -17,13 +17,16 @@ import com.example.tourguide.models.Place;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * this fragment take care of loading and handling user interface for Hotels and museum list.
+ */
 public class HotelMuseumFragment extends Fragment {
 
     private static final int TYPE_MUSEUM = 201;
     private static final int TYPE_HOTEL = 202;
     private static final String KEY_TYPE = "keyType";
 
+    // static method for creating museum fragment.
     public static HotelMuseumFragment museumFragment() {
         Bundle args = new Bundle();
         args.putInt(KEY_TYPE, TYPE_MUSEUM);
@@ -32,6 +35,7 @@ public class HotelMuseumFragment extends Fragment {
         return fragment;
     }
 
+    // static method for creating hotel fragment.
     public static HotelMuseumFragment hotelFragment() {
         Bundle args = new Bundle();
         args.putInt(KEY_TYPE, TYPE_HOTEL);
@@ -45,10 +49,10 @@ public class HotelMuseumFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_places, container, false);
-
+        // getting the type.
         int type = getArguments().getInt(KEY_TYPE, -1);
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-
+        // create and empty list.
         List<Place> dataList = new ArrayList<>();
         if (type == TYPE_MUSEUM) {
             dataList.add(new Place(getResources().getStringArray(R.array.museum_one)));
@@ -64,9 +68,9 @@ public class HotelMuseumFragment extends Fragment {
             dataList.add(new Place(getResources().getStringArray(R.array.hotel_four)));
             dataList.add(new Place(getResources().getStringArray(R.array.hotel_five)));
         }
-
+        // creating the adapter.
         HotelMuseumAdapter adapter = new HotelMuseumAdapter(dataList, TYPE_HOTEL == type);
-
+        // setting the recycler view parameters
         LinearLayoutManager manager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(manager);

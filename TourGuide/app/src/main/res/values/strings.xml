@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tour Guide</string>
+    <string name="app_name">London Guide</string>
     <string-array name="cafe_one">
         <item>Ace Cafe</item>
         <item>A transport cafe since 1938, and a popular hangout for rockers, bikers and petrolheads ever since.</item>
@@ -178,7 +178,7 @@
         <item>+44 871 984 6333</item>
         <item>No website.</item>
     </string-array>
-    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_detail">Detail </string>
     <string name="star_icon">Star icon</string>
     <string name="website_icon">website icon</string>
     <string name="place_icon">Place icon</string>

@@ -13,7 +13,9 @@ import com.example.tourguide.adapters.RestaurantCafeListener;
 import com.example.tourguide.adapters.TabLayoutAdapter;
 import com.example.tourguide.models.RestaurantCafe;
 
-
+/**
+ * the main activity takes care of adding the view pager and the tab layout, also receive user interaction.
+ */
 public class MainActivity extends AppCompatActivity implements RestaurantCafeListener {
 
     private ViewPager mMainViewPager;

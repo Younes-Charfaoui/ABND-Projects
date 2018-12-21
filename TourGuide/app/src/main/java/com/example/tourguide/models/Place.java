@@ -3,6 +3,9 @@ package com.example.tourguide.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * this object save the information about Restaurant, cafe, hotel and museum.
+ */
 public class Place implements Parcelable {
 
     private String name;
@@ -92,5 +95,4 @@ public class Place implements Parcelable {
         this.phone = in.readString();
         this.website = in.readString();
     }
-
 }

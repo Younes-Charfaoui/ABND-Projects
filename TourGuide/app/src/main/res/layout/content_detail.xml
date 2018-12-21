@@ -39,7 +39,7 @@
 
         <ImageView
             android:id="@+id/website_icon"
-            style="@style/iconInfoStyle"
+            style="@style/iconInfoStyleDetail"
             android:contentDescription="@string/website_icon"
             android:src="@drawable/ic_globe"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
 
         <ImageView
             android:id="@+id/place_icon"
-            style="@style/iconInfoStyle"
+            style="@style/iconInfoStyleDetail"
             android:contentDescription="@string/place_icon"
             android:src="@drawable/ic_place_black_24dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
 
         <ImageView
             android:id="@+id/call_icon"
-            style="@style/iconInfoStyle"
+            style="@style/iconInfoStyleDetail"
             android:contentDescription="@string/call_icon"
             android:src="@drawable/ic_call_black_24dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +66,7 @@
             style="@style/textInfoStyle"
             app:layout_constraintBottom_toBottomOf="@+id/call_icon"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="17sp"
             app:layout_constraintStart_toEndOf="@+id/call_icon"
             app:layout_constraintTop_toTopOf="@+id/call_icon"
             tools:text="@tools:sample/us_phones" />
@@ -73,6 +74,7 @@
         <TextView
             android:id="@+id/web_text_view"
             style="@style/textInfoStyle"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="@+id/website_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/website_icon"
@@ -82,6 +84,7 @@
         <TextView
             android:id="@+id/address_text_view"
             style="@style/textInfoStyle"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="@+id/place_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/place_icon"
@@ -90,8 +93,8 @@
 
         <ImageView
             android:id="@+id/description_icon"
-            style="@style/iconInfoStyle"
-            android:contentDescription="@string/place_icon"
+            style="@style/iconInfoStyleDetail"
+            android:contentDescription="@string/description_icon"
             android:src="@drawable/ic_description"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/website_icon" />
@@ -103,12 +106,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/description_icon"
             app:layout_constraintTop_toTopOf="@+id/description_icon"
             tools:text="@tools:sample/full_names" />
-
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
