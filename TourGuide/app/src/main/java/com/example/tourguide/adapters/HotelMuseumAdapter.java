@@ -65,7 +65,7 @@ public class HotelMuseumAdapter extends RecyclerView.Adapter<HotelMuseumAdapter.
         HotelMuseumHolder(View itemView) {
             super(itemView);
             titleTv = itemView.findViewById(R.id.title_text_view);
-            starTextView = itemView.findViewById(R.id.star_text_view);
+            starTextView = itemView.findViewById(R.id.web_text_view);
             addressTextView = itemView.findViewById(R.id.address_text_view);
             phoneTextView = itemView.findViewById(R.id.phone_text_view);
             starIconImageView = itemView.findViewById(R.id.website_icon);

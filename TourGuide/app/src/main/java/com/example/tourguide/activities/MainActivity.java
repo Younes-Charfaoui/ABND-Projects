@@ -1,12 +1,12 @@
 package com.example.tourguide.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import com.example.tourguide.R;
 import com.example.tourguide.adapters.RestaurantCafeListener;
@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity implements RestaurantCafeLis
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        // initializing the views.
         mMainViewPager = findViewById(R.id.main_view_pager);
         mTabLayout = findViewById(R.id.main_tab_layout);
-
+        // initializing the views and the adapters.
         setupViewPagerAndTabLayout();
     }
 
@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements RestaurantCafeLis
 
     @Override
     public void onRestaurantCafeItemClicked(RestaurantCafe restaurantCafe) {
-        Toast.makeText(this, "Hi", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(DetailActivity.KEY_OBJECT, restaurantCafe);
+        startActivity(intent);
     }
 }

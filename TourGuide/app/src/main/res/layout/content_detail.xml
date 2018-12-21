@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,102 +8,107 @@
     tools:context=".activities.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
-    <ImageView
-        android:id="@+id/place_image_view"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="@string/image_of_the_place"
-        android:scaleType="centerCrop"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/place_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="@string/image_of_the_place"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic" />
 
 
-    <TextView
-        android:id="@+id/title_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:maxLines="1"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place_image_view"
-        tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place_image_view"
+            tools:text="@tools:sample/full_names" />
 
-    <ImageView
-        android:id="@+id/website_icon"
-        style="@style/iconInfoStyle"
-        android:contentDescription="@string/website_icon"
-        android:src="@drawable/ic_globe"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place_icon" />
+        <ImageView
+            android:id="@+id/website_icon"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/website_icon"
+            android:src="@drawable/ic_globe"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/place_icon" />
 
-    <ImageView
-        android:id="@+id/place_icon"
-        style="@style/iconInfoStyle"
-        android:contentDescription="@string/place_icon"
-        android:src="@drawable/ic_place_black_24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/call_icon" />
+        <ImageView
+            android:id="@+id/place_icon"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/place_icon"
+            android:src="@drawable/ic_place_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/call_icon" />
 
-    <ImageView
-        android:id="@+id/call_icon"
-        style="@style/iconInfoStyle"
-        android:contentDescription="@string/call_icon"
-        android:src="@drawable/ic_call_black_24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+        <ImageView
+            android:id="@+id/call_icon"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/call_icon"
+            android:src="@drawable/ic_call_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
 
-    <TextView
-        android:id="@+id/phone_text_view"
-        style="@style/textInfoStyle"
-        app:layout_constraintBottom_toBottomOf="@+id/call_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/call_icon"
-        app:layout_constraintTop_toTopOf="@+id/call_icon"
-        tools:text="@tools:sample/us_phones" />
+        <TextView
+            android:id="@+id/phone_text_view"
+            style="@style/textInfoStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/call_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/call_icon"
+            app:layout_constraintTop_toTopOf="@+id/call_icon"
+            tools:text="@tools:sample/us_phones" />
 
-    <TextView
-        android:id="@+id/star_text_view"
-        style="@style/textInfoStyle"
-        app:layout_constraintBottom_toBottomOf="@+id/website_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/website_icon"
-        app:layout_constraintTop_toTopOf="@+id/website_icon"
-        tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/web_text_view"
+            style="@style/textInfoStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/website_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/website_icon"
+            app:layout_constraintTop_toTopOf="@+id/website_icon"
+            tools:text="@tools:sample/full_names" />
 
-    <TextView
-        android:id="@+id/address_text_view"
-        style="@style/textInfoStyle"
-        app:layout_constraintBottom_toBottomOf="@+id/place_icon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/place_icon"
-        app:layout_constraintTop_toTopOf="@+id/place_icon"
-        tools:text="@tools:sample/cities" />
+        <TextView
+            android:id="@+id/address_text_view"
+            style="@style/textInfoStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/place_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/place_icon"
+            app:layout_constraintTop_toTopOf="@+id/place_icon"
+            tools:text="@tools:sample/cities" />
 
-    <ImageView
-        android:id="@+id/description_icon"
-        style="@style/iconInfoStyle"
-        android:contentDescription="@string/place_icon"
-        android:src="@drawable/ic_description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/website_icon" />
+        <ImageView
+            android:id="@+id/description_icon"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/place_icon"
+            android:src="@drawable/ic_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/website_icon" />
 
-    <TextView
-        android:id="@+id/description_text_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/description_icon"
-        app:layout_constraintTop_toTopOf="@+id/description_icon"
-        tools:text="@tools:sample/full_names" />
+        <TextView
+            android:id="@+id/description_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/description_icon"
+            app:layout_constraintTop_toTopOf="@+id/description_icon"
+            tools:text="@tools:sample/full_names" />
 
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

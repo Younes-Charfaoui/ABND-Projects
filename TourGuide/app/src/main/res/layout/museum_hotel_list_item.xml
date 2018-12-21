@@ -62,7 +62,7 @@
             tools:text="@tools:sample/us_phones" />
 
         <TextView
-            android:id="@+id/star_text_view"
+            android:id="@+id/web_text_view"
             style="@style/textInfoStyle"
             app:layout_constraintBottom_toBottomOf="@+id/website_icon"
             app:layout_constraintEnd_toEndOf="parent"

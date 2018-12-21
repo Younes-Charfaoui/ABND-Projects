@@ -1,6 +1,9 @@
 package com.example.tourguide.models;
 
-public class Place {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Place implements Parcelable {
 
     private String name;
     private String description;
@@ -15,6 +18,18 @@ public class Place {
         this.phone = data[3];
         this.website = data[4];
     }
+
+    public static final Creator<Place> CREATOR = new Creator<Place>() {
+        @Override
+        public Place createFromParcel(Parcel in) {
+            return new Place(in);
+        }
+
+        @Override
+        public Place[] newArray(int size) {
+            return new Place[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -55,4 +70,27 @@ public class Place {
     public void setWebsite(String website) {
         this.website = website;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeString(this.description);
+        dest.writeString(this.address);
+        dest.writeString(this.phone);
+        dest.writeString(this.website);
+    }
+
+    protected Place(Parcel in) {
+        this.name = in.readString();
+        this.description = in.readString();
+        this.address = in.readString();
+        this.phone = in.readString();
+        this.website = in.readString();
+    }
+
 }
