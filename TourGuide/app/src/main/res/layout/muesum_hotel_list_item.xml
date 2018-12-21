@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_margin="16dp"
     android:layout_height="166dp">
 
     <android.support.constraint.ConstraintLayout
@@ -11,11 +12,14 @@
 
         <TextView
             android:id="@+id/title_text_view"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="32dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,60 +28,51 @@
 
         <ImageView
             android:id="@+id/website_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/website_icon"
             android:src="@drawable/ic_globe"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/place_icon" />
 
         <ImageView
             android:id="@+id/place_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/place_icon"
             android:src="@drawable/ic_place_black_24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/call_icon" />
 
         <ImageView
             android:id="@+id/call_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            style="@style/iconInfoStyle"
+            android:contentDescription="@string/call_icon"
             android:src="@drawable/ic_call_black_24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
 
         <TextView
             android:id="@+id/phone_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            style="@style/textInfoStyle"
             app:layout_constraintBottom_toBottomOf="@+id/call_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/call_icon"
             app:layout_constraintTop_toTopOf="@+id/call_icon"
             tools:text="@tools:sample/us_phones" />
 
         <TextView
             android:id="@+id/website_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            style="@style/textInfoStyle"
             app:layout_constraintBottom_toBottomOf="@+id/website_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/website_icon"
             app:layout_constraintTop_toTopOf="@+id/website_icon"
             tools:text="@tools:sample/full_names" />
 
         <TextView
             android:id="@+id/address_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            style="@style/textInfoStyle"
             app:layout_constraintBottom_toBottomOf="@+id/place_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/place_icon"
             app:layout_constraintTop_toTopOf="@+id/place_icon"
             tools:text="@tools:sample/cities" />

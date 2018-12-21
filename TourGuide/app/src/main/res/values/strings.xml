@@ -179,4 +179,7 @@
         <item>No website.</item>
     </string-array>
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="website_icon">website icon</string>
+    <string name="place_icon">Place icon</string>
+    <string name="call_icon">Call icon</string>
 </resources>
