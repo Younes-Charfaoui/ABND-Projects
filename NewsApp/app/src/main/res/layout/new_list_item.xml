@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="192dp"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="16dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/news_image_view"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/new_image_view_description"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/new_title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-light"
+            android:maxLines="1"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/news_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/news_image_view"
+            app:layout_constraintTop_toTopOf="@+id/news_image_view"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/news_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/news_image_view"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <TextView
+            android:id="@+id/news_author_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="@android:color/black"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/news_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/news_section_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/news_image_view"
+            app:layout_constraintTop_toTopOf="@+id/news_image_view"
+            tools:text="@tools:sample/first_names" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
