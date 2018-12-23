@@ -8,12 +8,12 @@ public class News {
 
     private String title;
     private String author;
-    private URL url;
-    private URL imageUrl;
+    private String url;
+    private String imageUrl;
     private String date;
     private String section;
 
-    public News(String title, String author, URL url, URL imageUrl, String date, String section) {
+    public News(String title, String author, String url, String imageUrl, String date, String section) {
         this.title = title;
         this.author = author;
         this.url = url;
@@ -38,19 +38,19 @@ public class News {
         this.author = author;
     }
 
-    public URL getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(URL url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
-    public URL getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(URL imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 

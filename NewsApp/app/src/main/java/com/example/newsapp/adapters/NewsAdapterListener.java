@@ -4,5 +4,5 @@ import java.net.URL;
 
 public interface NewsAdapterListener {
 
-    void onNewsItemClicked(URL url);
+    void onNewsItemClicked(String url);
 }
