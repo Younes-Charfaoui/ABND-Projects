@@ -7,4 +7,5 @@
     <string name="check_your_internet">Check Your Internet Connection.</string>
     <string name="message">Unfortunately there is no Internet Connection.</string>
     <string name="image_representing_no_internet_connection">image representing no internet connection.</string>
+    <string name="no_app_found_website">No app found to display website.</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.newsapp.activities;
 
-import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.app.SearchManager;
 import android.content.Context;
@@ -10,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -32,17 +32,18 @@ import com.example.newsapp.utilis.NetworkUtility;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>>, NewsAdapterListener {
+public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>>, NewsAdapterListener, SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener {
 
-    private static final int NEWS_LOADER_ID = 22;
     private RecyclerView newsRecyclerView;
     private ProgressBar progressBar;
     private LinearLayoutManager linearManager;
     private NewsAdapter adapter;
-    private static final String KEY_QUERY = "keyQuery";
-    private static final String KEY_TYPE = "keyType";
     private LinearLayout emptyView;
     private SearchView searchView;
+    private SwipeRefreshLayout swipeRefresh;
+    private static final int NEWS_LOADER_ID = 22;
+    private static final String KEY_QUERY = "keyQuery";
+    private static final String KEY_TYPE = "keyType";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,79 +52,56 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         progressBar = findViewById(R.id.news_progress_bar);
         newsRecyclerView = findViewById(R.id.news_recycler_view);
         emptyView = findViewById(R.id.empty_view);
         linearManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         if (NetworkUtility.isConnected(this)) {
-            progressBar.setVisibility(View.VISIBLE);
-            LoaderManager loaderManager = getLoaderManager();
-            loaderManager.initLoader(NEWS_LOADER_ID, null, this);
+            getLoaderManager().initLoader(NEWS_LOADER_ID, null, this);
         } else {
             progressBar.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
             newsRecyclerView.setVisibility(View.GONE);
         }
+
+        swipeRefresh = findViewById(R.id.news_refresh);
+        swipeRefresh.setOnRefreshListener(this);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        final MenuItem item = menu.findItem(R.id.action_search);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView = (SearchView) item.getActionView();
+        if (searchManager != null)
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setMaxWidth(Integer.MAX_VALUE);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                searchView.setIconified(false);
-                Bundle bundle = new Bundle();
-                bundle.putBoolean(KEY_TYPE, false);
-                String queryTwo = query.trim();
-                if (queryTwo.length() != 0) {
-                    bundle.putString(KEY_QUERY, query.trim());
-                    getLoaderManager().restartLoader(NEWS_LOADER_ID, bundle, MainActivity.this);
-                    return true;
-                } else {
-                    Toast.makeText(MainActivity.this, "Please type something.", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
+        searchView.setOnQueryTextListener(this);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_search:
+                return true;
+            case R.id.action_settings:
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     @NonNull
     @Override
     public Loader<List<News>> onCreateLoader(int i, @Nullable Bundle bundle) {
+        progressBar.setVisibility(View.VISIBLE);
+        newsRecyclerView.setVisibility(View.INVISIBLE);
         boolean normal = true;
-        if (bundle != null) {
+        if (bundle != null)
             normal = bundle.getBoolean(KEY_TYPE);
-        }
         NewsLoaders loader = new NewsLoaders(this, normal);
         if (!normal) loader.setQuery(bundle.getString(KEY_QUERY));
         return loader;
@@ -141,6 +119,9 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 newsRecyclerView.setLayoutManager(linearManager);
                 newsRecyclerView.setHasFixedSize(true);
                 newsRecyclerView.setAdapter(adapter);
+                swipeRefresh.setRefreshing(false);
+            } else {
+                // TODO: 23-Dec-18 making 0 Result layout shows
             }
         } else {
             Log.d("Loader", "newses is null Genius");
@@ -158,7 +139,34 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         if (mWebIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(mWebIntent);
         } else {
-            Toast.makeText(this, "No app found to display website.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_app_found_website, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        progressBar.setVisibility(View.VISIBLE);
+        searchView.clearFocus();
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(KEY_TYPE, false);
+        bundle.putString(KEY_QUERY, query.trim());
+        getLoaderManager().restartLoader(NEWS_LOADER_ID, bundle, MainActivity.this);
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        return false;
+    }
+
+    @Override
+    public void onRefresh() {
+        if (NetworkUtility.isConnected(this)) {
+            getLoaderManager().restartLoader(NEWS_LOADER_ID, null, this);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            emptyView.setVisibility(View.VISIBLE);
+            newsRecyclerView.setVisibility(View.GONE);
         }
     }
 }

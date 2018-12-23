@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/news_refresh"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/news_recycler_view"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="8dp"
-        tools:listitem="@layout/new_list_item" />
+        android:layout_height="match_parent">
 
-    <ProgressBar
-        android:id="@+id/news_progress_bar"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/news_recycler_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/news_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="8dp"
+            tools:listitem="@layout/new_list_item" />
 
-    <LinearLayout
-        android:id="@+id/empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:visibility="gone"
-        android:orientation="vertical"
-        tools:ignore="UseCompoundDrawables">
+        <ProgressBar
+            android:id="@+id/news_progress_bar"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/news_recycler_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/empty_view_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:src="@drawable/no_connection"
-            android:contentDescription="@string/image_representing_no_internet_connection" />
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:ignore="UseCompoundDrawables">
 
-        <TextView
-            android:id="@+id/empty_view_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="@string/check_your_internet"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textStyle="bold" />
-    </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+            <ImageView
+                android:id="@+id/empty_view_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_representing_no_internet_connection"
+                android:paddingBottom="16dp"
+                android:src="@drawable/no_connection" />
+
+            <TextView
+                android:id="@+id/empty_view_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/check_your_internet"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

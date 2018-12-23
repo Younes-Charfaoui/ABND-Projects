@@ -22,6 +22,9 @@ public class NewsLoaders extends AsyncTaskLoader<List<News>> {
         this.isNormal = normal;
     }
 
+    public void setQuery(String query) {
+        this.query = query;
+    }
 
     @Override
     protected void onStartLoading() {
@@ -42,9 +45,5 @@ public class NewsLoaders extends AsyncTaskLoader<List<News>> {
         } catch (IOException exception) {
             return null;
         }
-    }
-
-    public void setQuery(String query) {
-        this.query = query;
     }
 }
