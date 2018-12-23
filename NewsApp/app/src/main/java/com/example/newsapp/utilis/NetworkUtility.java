@@ -21,7 +21,10 @@ public final class NetworkUtility {
     private static final String API_KEY = "494a80c1-d254-46fc-90e8-a108e84fde27";
     private static final String KEY_API_KEY = "api-key";
     private static final String KEY_QUERY = "q";
-
+    private static final String KEY_TAGS = "show-tags";
+    private static final String KEY_PAGE_SIZE = "page-size";
+    private static final String CONTRIBUTOR = "contributor";
+    private static final String NUMBER_PAGE_SIZE = "50";
 
     public static String makeHttpRequest(URL mUrl) throws IOException {
         HttpURLConnection connection = (HttpURLConnection) mUrl.openConnection();
@@ -53,9 +56,11 @@ public final class NetworkUtility {
         return networkInfo != null && networkInfo.isConnected();
     }
 
-    public static URL createUrl(String query) {
+    public static URL createSearchUrl(String query) {
         Uri uri = Uri.parse(BASE_URL).buildUpon().
                 appendQueryParameter(KEY_QUERY, query).
+                appendQueryParameter(KEY_PAGE_SIZE, NUMBER_PAGE_SIZE).
+                appendQueryParameter(KEY_TAGS, CONTRIBUTOR).
                 appendQueryParameter(KEY_API_KEY, API_KEY).build();
 
         URL mUrl = null;
@@ -66,4 +71,17 @@ public final class NetworkUtility {
         return mUrl;
     }
 
+    public static URL createNormalUrl() {
+        Uri uri = Uri.parse(BASE_URL).buildUpon().
+                appendQueryParameter(KEY_PAGE_SIZE, NUMBER_PAGE_SIZE).
+                appendQueryParameter(KEY_TAGS, CONTRIBUTOR).
+                appendQueryParameter(KEY_API_KEY, API_KEY).build();
+
+        URL mUrl = null;
+        try {
+            mUrl = new URL(uri.toString());
+        } catch (MalformedURLException ignored) {
+        }
+        return mUrl;
+    }
 }

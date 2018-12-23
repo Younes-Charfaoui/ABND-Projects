@@ -9,15 +9,13 @@ public class News {
     private String title;
     private String author;
     private String url;
-    private String imageUrl;
     private String date;
     private String section;
 
-    public News(String title, String author, String url, String imageUrl, String date, String section) {
+    public News(String title, String author, String url, String date, String section) {
         this.title = title;
         this.author = author;
         this.url = url;
-        this.imageUrl = imageUrl;
         this.date = date;
         this.section = section;
     }
@@ -44,14 +42,6 @@ public class News {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public String getDate() {
