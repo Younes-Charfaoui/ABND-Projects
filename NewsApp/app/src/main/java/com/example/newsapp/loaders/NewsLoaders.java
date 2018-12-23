@@ -13,13 +13,8 @@ import java.util.List;
 
 public class NewsLoaders extends AsyncTaskLoader<List<News>> {
 
-
-    private String mSource;
-
-    public NewsLoaders(Context context, String source) {
+    public NewsLoaders(Context context) {
         super(context);
-
-        this.mSource = source;
     }
 
     @Override
@@ -30,14 +25,16 @@ public class NewsLoaders extends AsyncTaskLoader<List<News>> {
     @Override
     public List<News> loadInBackground() {
 
-        URL url = NetworkUtility.createUrl(mSource);
+        URL url = NetworkUtility.createUrl("");
         String response = null;
         try {
             response = NetworkUtility.makeHttpRequest(url);
+            //List<News> news = JsonUtility.getNewsFromJson(response);
         } catch (IOException ignored) {
+            response = null;
         }
 
-        //List<News> news = JsonUtility.getNewsFromJson(response);
+
         return null;
     }
 }

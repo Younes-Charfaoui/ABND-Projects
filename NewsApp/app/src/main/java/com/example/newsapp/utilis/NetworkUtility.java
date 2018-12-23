@@ -1,6 +1,9 @@
 package com.example.newsapp.utilis;
 
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 
 import java.io.IOException;
@@ -9,6 +12,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
+
+import static android.content.Context.CONNECTIVITY_SERVICE;
 
 public final class NetworkUtility {
 
@@ -37,6 +42,15 @@ public final class NetworkUtility {
             connection.disconnect();
         }
 
+    }
+
+    public static boolean isConnected(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.
+                getSystemService(CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return networkInfo != null && networkInfo.isConnected();
     }
 
     public static URL createUrl(String query) {

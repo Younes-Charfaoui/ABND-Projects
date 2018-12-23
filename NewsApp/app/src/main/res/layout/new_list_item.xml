@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="192dp"
-    android:layout_margin="16dp"
+    android:layout_height="160dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
     app:cardCornerRadius="16dp">
 
     <android.support.constraint.ConstraintLayout
@@ -12,40 +15,34 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <ImageView
-            android:id="@+id/news_image_view"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/new_image_view_description"
-            android:scaleType="centerCrop"
-            tools:src="@tools:sample/backgrounds/scenic" />
-
         <TextView
-            android:id="@+id/new_title_text_view"
+            android:id="@+id/news_title_text_view"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:fontFamily="sans-serif-light"
-            android:maxLines="1"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="@+id/news_image_view"
+            android:maxLines="2"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toTopOf="@+id/news_author_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/news_image_view"
-            app:layout_constraintTop_toTopOf="@+id/news_image_view"
-            tools:text="@tools:sample/full_names" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/news_section_text_view"
+            tools:text="@tools:sample/lorem/random" />
 
         <TextView
             android:id="@+id/news_date_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:textStyle="bold"
             android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/news_image_view"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/date/ddmmyy" />
 
         <TextView
@@ -53,9 +50,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:textColor="@android:color/black"
+            android:textSize="16sp"
             android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="@+id/news_image_view"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="@tools:sample/full_names" />
 
@@ -64,10 +63,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:textColor="@color/colorAccent"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/news_image_view"
-            app:layout_constraintTop_toTopOf="@+id/news_image_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/first_names" />
 
     </android.support.constraint.ConstraintLayout>
