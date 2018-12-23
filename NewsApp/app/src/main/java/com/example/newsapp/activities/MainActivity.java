@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private ProgressBar progressBar;
     private LinearLayoutManager linearManager;
     private NewsAdapter adapter;
+    private static final String KEY_QUERY = "keyQuery";
+    private static final String KEY_TYPE = "keyType";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         if (NetworkUtility.isConnected(this)) {
             progressBar.setVisibility(View.VISIBLE);
             LoaderManager loaderManager = getLoaderManager();
+            Bundle bundle = new Bundle();
             loaderManager.initLoader(NEWS_LOADER_ID, null, this);
         }
     }
@@ -81,7 +84,13 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     @NonNull
     @Override
     public Loader<List<News>> onCreateLoader(int i, @Nullable Bundle bundle) {
-        return new NewsLoaders(this);
+        boolean normal = true;
+        if (bundle != null) {
+            normal = bundle.getBoolean(KEY_TYPE);
+        }
+        NewsLoaders loader = new NewsLoaders(this, normal);
+        if (!normal) loader.setQuery(bundle.getString(KEY_QUERY));
+        return loader;
     }
 
     @Override

@@ -30,12 +30,9 @@ public final class NetworkUtility {
         HttpURLConnection connection = (HttpURLConnection) mUrl.openConnection();
         try {
             InputStream inputStream = connection.getInputStream();
-
             Scanner scanner = new Scanner(inputStream);
             scanner.useDelimiter("\\A");
-
             boolean hasInput = scanner.hasNext();
-
             if (hasInput) {
                 return scanner.next();
             } else {
@@ -44,7 +41,6 @@ public final class NetworkUtility {
         } finally {
             connection.disconnect();
         }
-
     }
 
     public static boolean isConnected(Context context) {
