@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
             progressBar.setVisibility(View.VISIBLE);
             LoaderManager loaderManager = getLoaderManager();
             loaderManager.initLoader(NEWS_LOADER_ID, null, this);
+        } else {
+            progressBar.setVisibility(View.GONE);
+            emptyView.setVisibility(View.VISIBLE);
+            newsRecyclerView.setVisibility(View.GONE);
         }
     }
 
@@ -76,8 +80,18 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Log.d("Loader", "query was " + query);
-                return false;
+                searchView.setIconified(false);
+                Bundle bundle = new Bundle();
+                bundle.putBoolean(KEY_TYPE, false);
+                String queryTwo = query.trim();
+                if (queryTwo.length() != 0) {
+                    bundle.putString(KEY_QUERY, query.trim());
+                    getLoaderManager().restartLoader(NEWS_LOADER_ID, bundle, MainActivity.this);
+                    return true;
+                } else {
+                    Toast.makeText(MainActivity.this, "Please type something.", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
 
             @Override
