@@ -24,7 +24,7 @@ public final class NetworkUtility {
     private static final String KEY_TAGS = "show-tags";
     private static final String KEY_PAGE_SIZE = "page-size";
     private static final String CONTRIBUTOR = "contributor";
-    private static final String NUMBER_PAGE_SIZE = "50";
+    private static final String NUMBER_PAGE_SIZE = "20";
 
     public static String makeHttpRequest(URL mUrl) throws IOException {
         HttpURLConnection connection = (HttpURLConnection) mUrl.openConnection();

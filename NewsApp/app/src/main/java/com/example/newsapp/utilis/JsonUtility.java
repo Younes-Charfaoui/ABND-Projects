@@ -42,7 +42,7 @@ public final class JsonUtility {
                     String section = data.getString(KEY_SECTION);
                     String title = data.getString(KEY_TITLE);
                     String webUrl = data.getString(KEY_WEB_URL);
-                    String date = data.getString(KEY_PUBLICATION_DATE);
+                    String date = data.getString(KEY_PUBLICATION_DATE).substring(0, 10);
                     String author = "Unknown";
                     if (data.has(KEY_TAGS)) {
                         JSONArray tags = data.getJSONArray(KEY_TAGS);

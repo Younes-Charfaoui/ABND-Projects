@@ -36,14 +36,12 @@ public class NewsLoaders extends AsyncTaskLoader<List<News>> {
         } else {
             url = NetworkUtility.createSearchUrl(query);
         }
-        String response = null;
         try {
-            response = NetworkUtility.makeHttpRequest(url);
-            List<News> news = JsonUtility.parseResult(response);
-        } catch (IOException ignored) {
+            String response = NetworkUtility.makeHttpRequest(url);
+            return JsonUtility.parseResult(response);
+        } catch (IOException exception) {
+            return null;
         }
-
-        return null;
     }
 
     public void setQuery(String query) {
