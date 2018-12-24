@@ -19,8 +19,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.newsapp.R;
@@ -32,7 +34,7 @@ import com.example.newsapp.utilis.NetworkUtility;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>>, NewsAdapterListener, SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener {
+public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>>, NewsAdapterListener, SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
 
     private RecyclerView newsRecyclerView;
     private ProgressBar progressBar;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private static final int NEWS_LOADER_ID = 22;
     private static final String KEY_QUERY = "keyQuery";
     private static final String KEY_TYPE = "keyType";
+    private ImageView emptyImage;
+    private TextView emptyText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         progressBar = findViewById(R.id.news_progress_bar);
         newsRecyclerView = findViewById(R.id.news_recycler_view);
         emptyView = findViewById(R.id.empty_view);
+        emptyImage.setOnClickListener(this);
+        emptyImage = emptyView.findViewById(R.id.empty_view_image);
+        emptyText = emptyView.findViewById(R.id.empty_view_text_view);
         linearManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         if (NetworkUtility.isConnected(this)) {
@@ -62,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         } else {
             progressBar.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
+            emptyImage.setImageResource(R.drawable.no_connection);
+            emptyText.setText(R.string.check_your_internet);
             newsRecyclerView.setVisibility(View.GONE);
         }
 
@@ -115,13 +124,19 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
                 emptyView.setVisibility(View.GONE);
+                emptyImage.setImageResource(R.drawable.no_connection);
+                emptyText.setText(R.string.check_your_internet);
                 newsRecyclerView.setVisibility(View.VISIBLE);
                 newsRecyclerView.setLayoutManager(linearManager);
                 newsRecyclerView.setHasFixedSize(true);
                 newsRecyclerView.setAdapter(adapter);
                 swipeRefresh.setRefreshing(false);
             } else {
-                // TODO: 23-Dec-18 making 0 Result layout shows
+                progressBar.setVisibility(View.GONE);
+                emptyView.setVisibility(View.VISIBLE);
+                newsRecyclerView.setVisibility(View.GONE);
+                emptyImage.setImageResource(R.drawable.no_data);
+                emptyText.setText(R.string.no_data_text);
             }
         } else {
             Log.d("Loader", "newses is null Genius");
@@ -161,12 +176,25 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     @Override
     public void onRefresh() {
+        retry();
+    }
+
+    private void retry() {
         if (NetworkUtility.isConnected(this)) {
+            emptyView.setVisibility(View.GONE);
             getLoaderManager().restartLoader(NEWS_LOADER_ID, null, this);
         } else {
             progressBar.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
+            emptyImage.setImageResource(R.drawable.no_connection);
+            emptyText.setText(R.string.check_your_internet);
             newsRecyclerView.setVisibility(View.GONE);
+            swipeRefresh.setRefreshing(false);
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        retry();
     }
 }
