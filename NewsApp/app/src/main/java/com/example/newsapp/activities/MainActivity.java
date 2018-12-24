@@ -15,7 +15,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,33 +54,33 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        // initializing the views.
         progressBar = findViewById(R.id.news_progress_bar);
         newsRecyclerView = findViewById(R.id.news_recycler_view);
         emptyView = findViewById(R.id.empty_view);
-        emptyImage.setOnClickListener(this);
         emptyImage = emptyView.findViewById(R.id.empty_view_image);
         emptyText = emptyView.findViewById(R.id.empty_view_text_view);
+        emptyView.setOnClickListener(this);
         linearManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-
+        swipeRefresh = findViewById(R.id.news_refresh);
+        swipeRefresh.setOnRefreshListener(this);
+        //checking if there is internet connection.
         if (NetworkUtility.isConnected(this)) {
             getLoaderManager().initLoader(NEWS_LOADER_ID, null, this);
         } else {
             progressBar.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
-            emptyImage.setImageResource(R.drawable.no_connection);
-            emptyText.setText(R.string.check_your_internet);
+            displayEmptyView(R.drawable.no_connection, R.string.check_your_internet);
             newsRecyclerView.setVisibility(View.GONE);
         }
-
-        swipeRefresh = findViewById(R.id.news_refresh);
-        swipeRefresh.setOnRefreshListener(this);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        final MenuItem item = menu.findItem(R.id.action_search);
+        MenuItem item = menu.findItem(R.id.action_search);
+        // getting the search manager and search view and assigning the actions.
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) item.getActionView();
         if (searchManager != null)
@@ -124,8 +123,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
                 emptyView.setVisibility(View.GONE);
-                emptyImage.setImageResource(R.drawable.no_connection);
-                emptyText.setText(R.string.check_your_internet);
+                displayEmptyView(R.drawable.no_connection, R.string.check_your_internet);
                 newsRecyclerView.setVisibility(View.VISIBLE);
                 newsRecyclerView.setLayoutManager(linearManager);
                 newsRecyclerView.setHasFixedSize(true);
@@ -135,13 +133,13 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 progressBar.setVisibility(View.GONE);
                 emptyView.setVisibility(View.VISIBLE);
                 newsRecyclerView.setVisibility(View.GONE);
-                emptyImage.setImageResource(R.drawable.no_data);
-                emptyText.setText(R.string.no_data_text);
+                displayEmptyView(R.drawable.no_data, R.string.no_data_text);
             }
         } else {
-            Log.d("Loader", "newses is null Genius");
+            displayEmptyView(R.drawable.no_data, R.string.no_data_text);
         }
     }
+
 
     @Override
     public void onLoaderReset(@NonNull Loader<List<News>> loader) {
@@ -150,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     @Override
     public void onNewsItemClicked(String url) {
+        // launching the Website intent with url.
         Intent mWebIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         if (mWebIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(mWebIntent);
@@ -160,11 +159,14 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
 
     @Override
     public boolean onQueryTextSubmit(String query) {
+        // handling the query from the user.
         progressBar.setVisibility(View.VISIBLE);
         searchView.clearFocus();
         Bundle bundle = new Bundle();
         bundle.putBoolean(KEY_TYPE, false);
         bundle.putString(KEY_QUERY, query.trim());
+        searchView.setQuery("",false);
+        searchView.setIconified(true);
         getLoaderManager().restartLoader(NEWS_LOADER_ID, bundle, MainActivity.this);
         return true;
     }
@@ -186,11 +188,16 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         } else {
             progressBar.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
-            emptyImage.setImageResource(R.drawable.no_connection);
-            emptyText.setText(R.string.check_your_internet);
+            displayEmptyView(R.drawable.no_connection, R.string.check_your_internet);
             newsRecyclerView.setVisibility(View.GONE);
             swipeRefresh.setRefreshing(false);
         }
+    }
+
+
+    private void displayEmptyView(int image, int string) {
+        emptyImage.setImageResource(image);
+        emptyText.setText(string);
     }
 
     @Override

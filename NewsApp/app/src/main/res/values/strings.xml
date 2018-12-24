@@ -9,4 +9,5 @@
     <string name="image_representing_no_internet_connection">image representing no internet connection.</string>
     <string name="no_app_found_website">No app found to display website.</string>
     <string name="no_data_text">No data found, retry another search</string>
+    <string name="tap_here_to_retry">Tap here to retry.</string>
 </resources>

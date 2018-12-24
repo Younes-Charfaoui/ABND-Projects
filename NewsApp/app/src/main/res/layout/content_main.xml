@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:visibility="gone"
             tools:listitem="@layout/new_list_item" />
 
@@ -37,7 +38,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="visible"
+            android:visibility="gone"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
@@ -52,20 +53,18 @@
                 android:id="@+id/empty_view_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:textSize="20sp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif"
                 android:text="@string/check_your_internet"
-                />
+                android:textSize="18sp" />
 
             <TextView
-                android:textSize="18sp"
-                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-light"
-                android:text="Tap here to retry."
-                />
+                android:text="@string/tap_here_to_retry"
+                android:textSize="16sp" />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.SwipeRefreshLayout>
