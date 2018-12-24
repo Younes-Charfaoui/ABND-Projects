@@ -12,21 +12,22 @@ import java.util.List;
 
 public final class JsonUtility {
 
+    // some constant to help deserialize the json .
     private static final String STATUS_OK = "ok";
-    public static final String KEY_TYPE = "type";
     private static final String KEY_SECTION = "sectionName";
     private static final String KEY_PUBLICATION_DATE = "webPublicationDate";
     private static final String KEY_TITLE = "webTitle";
     private static final String KEY_WEB_URL = "webUrl";
     private static final String KEY_TAGS = "tags";
-    //public static final String KEY_FIELDS = "fields";
-    //public static final String KEY_THUMBNAIL = "thumbnail";
     private static final String KEY_RESULT = "results";
     private static final String KEY_RESPONSE = "response";
     private static final String KEY_STATUS = "status";
-    //public static final String KEY_PAGE_SIZE = "pageSize";
 
-
+    /**
+     * This method takes care of deserialize a json string into list of news.
+     * @param result the response string from the server.
+     * @return news object in a list.
+     */
     public static List<News> parseResult(String result) {
         List<News> newsList = new ArrayList<>();
         try {

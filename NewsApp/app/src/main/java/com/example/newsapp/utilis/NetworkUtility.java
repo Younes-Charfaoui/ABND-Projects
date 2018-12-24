@@ -17,6 +17,7 @@ import static android.content.Context.CONNECTIVITY_SERVICE;
 
 public final class NetworkUtility {
 
+    // some helper constant for the networking activity.
     private static final String BASE_URL = "https://content.guardianapis.com/search";
     private static final String API_KEY = "494a80c1-d254-46fc-90e8-a108e84fde27";
     private static final String KEY_API_KEY = "api-key";
@@ -26,8 +27,14 @@ public final class NetworkUtility {
     private static final String CONTRIBUTOR = "contributor";
     private static final String NUMBER_PAGE_SIZE = "20";
 
-    public static String makeHttpRequest(URL mUrl) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) mUrl.openConnection();
+    /**
+     * Method that request a remote server from a given  Url.
+     * @param url the url we want to request.
+     * @return response string.
+     * @throws IOException in case of error.
+     */
+    public static String makeHttpRequest(URL url) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         try {
             InputStream inputStream = connection.getInputStream();
             Scanner scanner = new Scanner(inputStream);
@@ -43,15 +50,23 @@ public final class NetworkUtility {
         }
     }
 
+    /**
+     * helper method to check if there is connection.
+     * @param context context to get system service.
+     * @return boolean indicating the state of connection.
+     */
     public static boolean isConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.
                 getSystemService(CONNECTIVITY_SERVICE);
-
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-
         return networkInfo != null && networkInfo.isConnected();
     }
 
+    /**
+     * method that create a well formed URL given a query search word.
+     * @param query the user word.
+     * @return well formed URL.
+     */
     public static URL createSearchUrl(String query) {
         Uri uri = Uri.parse(BASE_URL).buildUpon().
                 appendQueryParameter(KEY_QUERY, query).
@@ -67,6 +82,10 @@ public final class NetworkUtility {
         return mUrl;
     }
 
+    /**
+     * method that create a general news well formed URL .
+     * @return well formed URL.
+     */
     public static URL createNormalUrl() {
         Uri uri = Uri.parse(BASE_URL).buildUpon().
                 appendQueryParameter(KEY_PAGE_SIZE, NUMBER_PAGE_SIZE).

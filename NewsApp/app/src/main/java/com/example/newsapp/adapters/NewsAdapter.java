@@ -12,7 +12,10 @@ import com.example.newsapp.models.News;
 
 import java.util.List;
 
-
+/**
+ * an adapter for handling the displaying and the click handling
+ * of news items.
+ */
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     private List<News> newsList;
@@ -55,12 +58,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             newsDateTextView = itemView.findViewById(R.id.news_date_text_view);
             newsAuthorTextView = itemView.findViewById(R.id.news_author_text_view);
             newsSectionTextView = itemView.findViewById(R.id.news_section_text_view);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    listener.onNewsItemClicked(newsList.get(getAdapterPosition()).getUrl());
-                }
-            });
+            itemView.setOnClickListener(v -> listener.onNewsItemClicked(newsList.get(getAdapterPosition()).getUrl()));
         }
     }
 

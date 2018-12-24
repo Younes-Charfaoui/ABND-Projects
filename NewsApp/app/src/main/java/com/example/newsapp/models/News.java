@@ -1,9 +1,9 @@
 package com.example.newsapp.models;
 
 
-import java.net.URL;
-
-
+/**
+ * a base model for a news item containing general information about a news.
+ */
 public class News {
 
     private String title;

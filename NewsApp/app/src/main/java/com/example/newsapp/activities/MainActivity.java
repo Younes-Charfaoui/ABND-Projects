@@ -96,15 +96,13 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         switch (id) {
             case R.id.action_search:
                 return true;
-            case R.id.action_settings:
-                return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     @NonNull
     @Override
-    public Loader<List<News>> onCreateLoader(int i, @Nullable Bundle bundle) {
+    public Loader<List<News>> onCreateLoader(int id, @Nullable Bundle bundle) {
         progressBar.setVisibility(View.VISIBLE);
         newsRecyclerView.setVisibility(View.INVISIBLE);
         boolean normal = true;

@@ -12,9 +12,16 @@ import java.net.URL;
 import java.util.List;
 
 
+/**
+ * News Loader class which is the responsible for calling the remote
+ * server in a background Thread and retransmit it to the foreground thread
+ * throughout its callbacks
+ */
 public class NewsLoaders extends AsyncTaskLoader<List<News>> {
 
+    // case of general or query based call for server.
     private boolean isNormal;
+    // the query word from the user.
     private String query;
 
     public NewsLoaders(Context context, boolean normal) {
