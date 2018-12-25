@@ -33,8 +33,14 @@ import com.example.newsapp.utilis.NetworkUtility;
 
 import java.util.List;
 
+/**
+ * The Main activity handle the main app characteristic, it does get the information from the
+ * server in separate thread, populate the recycler view, handle cases when there is data or not,
+ * and also check if there is internet connection.
+ */
 public class MainActivity extends AppCompatActivity implements LoaderCallbacks<List<News>>, NewsAdapterListener, SearchView.OnQueryTextListener, SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
 
+    // some views reference to make some operations.
     private RecyclerView newsRecyclerView;
     private ProgressBar progressBar;
     private LinearLayoutManager linearManager;
@@ -42,11 +48,12 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     private LinearLayout emptyView;
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefresh;
+    private ImageView emptyImage;
+    private TextView emptyText;
+    //some constants
     private static final int NEWS_LOADER_ID = 22;
     private static final String KEY_QUERY = "keyQuery";
     private static final String KEY_TYPE = "keyType";
-    private ImageView emptyImage;
-    private TextView emptyText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +81,6 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
             newsRecyclerView.setVisibility(View.GONE);
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -117,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
     public void onLoadFinished(@NonNull Loader<List<News>> loader, List<News> news) {
         if (news != null) {
             if (news.size() != 0) {
+                // in case there is some data to work with.
                 adapter = new NewsAdapter(news, this);
                 adapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
@@ -128,16 +135,17 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
                 newsRecyclerView.setAdapter(adapter);
                 swipeRefresh.setRefreshing(false);
             } else {
+                // in case of there is no data.
                 progressBar.setVisibility(View.GONE);
                 emptyView.setVisibility(View.VISIBLE);
                 newsRecyclerView.setVisibility(View.GONE);
                 displayEmptyView(R.drawable.no_data, R.string.no_data_text);
             }
         } else {
+            // in case of error in the app by json exception or IO exception.
             displayEmptyView(R.drawable.no_data, R.string.no_data_text);
         }
     }
-
 
     @Override
     public void onLoaderReset(@NonNull Loader<List<News>> loader) {
@@ -163,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         Bundle bundle = new Bundle();
         bundle.putBoolean(KEY_TYPE, false);
         bundle.putString(KEY_QUERY, query.trim());
-        searchView.setQuery("",false);
+        searchView.setQuery("", false);
         searchView.setIconified(true);
         getLoaderManager().restartLoader(NEWS_LOADER_ID, bundle, MainActivity.this);
         return true;
@@ -179,6 +187,20 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         retry();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.empty_view:
+                // retry when the empty view clicked.
+                retry();
+                break;
+        }
+    }
+
+    /**
+     * This method handle the retry process which consist of checking if there is internet,
+     * if this is the case it does start a loader, otherwise it does display an empty view.
+     */
     private void retry() {
         if (NetworkUtility.isConnected(this)) {
             emptyView.setVisibility(View.GONE);
@@ -192,14 +214,14 @@ public class MainActivity extends AppCompatActivity implements LoaderCallbacks<L
         }
     }
 
-
-    private void displayEmptyView(int image, int string) {
+    /**
+     * helper method to display the right empty screen.
+     *
+     * @param image the image we want  to display in the empty view.
+     * @param text  the text we want  to display in the empty view.
+     */
+    private void displayEmptyView(int image, int text) {
         emptyImage.setImageResource(image);
-        emptyText.setText(string);
-    }
-
-    @Override
-    public void onClick(View v) {
-        retry();
+        emptyText.setText(text);
     }
 }

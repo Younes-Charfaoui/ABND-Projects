@@ -61,5 +61,4 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             itemView.setOnClickListener(v -> listener.onNewsItemClicked(newsList.get(getAdapterPosition()).getUrl()));
         }
     }
-
 }
